@@ -1,6 +1,7 @@
 // Check if the specific ID exists
 if (specificIdElement) {
     function enable_rate() {
+        specificIdElement.querySelector('.checkbox-container input').checked = true;
         const textContainer = specificIdElement.querySelector('.ratebox-container .text-container');
         textContainer.innerText = 'قیمت های درج شده برای یک ظرفیت و با احتساب %۹ ارزش افزوده می بـاشد.';
         textContainer.classList.add('active');
@@ -13,6 +14,7 @@ if (specificIdElement) {
     }
 
     function disable_rate() {
+        specificIdElement.querySelector('.checkbox-container input').checked = false;
         const textContainer = specificIdElement.querySelector('.ratebox-container .text-container');
         textContainer.innerText = 'قیمت های درج شده برای یک ظرفیت می بـاشد.';
         textContainer.classList.remove('active');

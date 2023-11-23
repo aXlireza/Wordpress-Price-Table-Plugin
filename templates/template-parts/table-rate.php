@@ -2,8 +2,8 @@
 
 function table_rate() {
     echo "<div class=\"ratebox-container rtl\">
-        <div class=\"checkbox-container\">
-            <input type=\"checkbox\" onClick=\"checkbox_handler()\" />
+        <div class=\"checkbox-container\" onClick=\"checkbox_handler()\">
+            <input type=\"checkbox\" />
             <label for=\"toggleText\">نمایش قیمت با ارزش افزوده</label>
         </div>
         <div class=\"text-container\">
