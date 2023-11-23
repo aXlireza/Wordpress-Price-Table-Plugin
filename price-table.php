@@ -26,31 +26,7 @@ function create_price_history_table() {
     dbDelta($sql);
 }
 
-add_action('customize_register', 'add_custom_css_customizer');
-
-function add_custom_css_customizer($wp_customize) {
-    $wp_customize->add_section('price_table_custom_css_section', array(
-        'title' => 'Price Table Custom CSS',
-        'priority' => 30,
-    ));
-
-    $wp_customize->add_setting('price_table_custom_css', array(
-        'default' => '',
-        'sanitize_callback' => 'wp_filter_nohtml_kses', // Sanitize the input
-    ));
-
-    $wp_customize->add_control('custom_css_control', array(
-        'label' => 'Enter your custom CSS here:',
-        'section' => 'price_table_custom_css_section',
-        'settings' => 'price_table_custom_css',
-        'type' => 'textarea',
-    ));
-}
-
-
-
-
-
+include plugin_dir_path(__FILE__) . 'custom-css.php';
 include plugin_dir_path(__FILE__) . 'price-history.php';
 include plugin_dir_path(__FILE__) . 'categories-customfields.php';
 include plugin_dir_path(__FILE__) . 'assets.php';
