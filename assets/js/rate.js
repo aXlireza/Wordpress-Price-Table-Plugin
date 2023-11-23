@@ -1,13 +1,11 @@
 // Check if the specific ID exists
-var specificIdElement = document.getElementById('price_table_options_main');
-
 if (specificIdElement) {
     function enable_rate() {
-        const textContainer = specificIdElement.querySelector('#pricetable_mainbody_by_factory .ratebox-container .text-container');
+        const textContainer = specificIdElement.querySelector('.ratebox-container .text-container');
         textContainer.innerText = 'قیمت های درج شده برای یک ظرفیت و با احتساب %۹ ارزش افزوده می بـاشد.';
         textContainer.classList.add('active');
         [...specificIdElement.querySelectorAll('.rate_checked_warning')].forEach(item => item.classList.remove('hidden'));
-        [...specificIdElement.querySelectorAll("#pricetable_mainbody_by_factory .price .pricenumber")].forEach(price => {
+        [...specificIdElement.querySelectorAll(".price .pricenumber")].forEach(price => {
             const pricenum = Number(price.getAttribute('original_price'));
             const newprice = pricenum + pricenum*9;
             price.innerHTML = en_to_fa_num(newprice.toString())
@@ -15,11 +13,11 @@ if (specificIdElement) {
     }
 
     function disable_rate() {
-        const textContainer = specificIdElement.querySelector('#pricetable_mainbody_by_factory .ratebox-container .text-container');
+        const textContainer = specificIdElement.querySelector('.ratebox-container .text-container');
         textContainer.innerText = 'قیمت های درج شده برای یک ظرفیت می بـاشد.';
         textContainer.classList.remove('active');
         [...specificIdElement.querySelectorAll('.rate_checked_warning')].forEach(item => item.classList.add('hidden'));
-        [...specificIdElement.querySelectorAll("#pricetable_mainbody_by_factory .price .pricenumber")].forEach(price => {
+        [...specificIdElement.querySelectorAll(".price .pricenumber")].forEach(price => {
             const pricenum = Number(price.getAttribute('original_price'));
             price.innerHTML = en_to_fa_num(pricenum.toString())
         })

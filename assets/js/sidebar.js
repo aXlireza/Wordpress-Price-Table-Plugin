@@ -1,9 +1,6 @@
 // Check if the specific ID exists
-var specificIdElement = document.getElementById('price_table_options_main');
-
 if (specificIdElement) {
 	document.addEventListener('DOMContentLoaded', () => {
-		var specificIdElement = document.getElementById('price_table_options_main');
 		if (!specificIdElement.querySelector('#btn-factories')) return;
 		// switch between factories/sizes render
 		specificIdElement.querySelector('#btn-factories').addEventListener('click', () => {

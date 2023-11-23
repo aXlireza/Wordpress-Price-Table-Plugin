@@ -1,10 +1,12 @@
-// Check if the specific ID exists
+// The Parent IDs where any of the scripts will be applied to
+var homepage_specificIdElement = document.getElementById('homepage-table-price');
 var specificIdElement = document.getElementById('price_table_options_main');
 
+// Check if the specific ID exists
 if (specificIdElement) {
   // make digits persian
   document.addEventListener('DOMContentLoaded', function() {
-    var elements = document.querySelectorAll('#price_table_options_main .farsi-numbers');
+    var elements = specificIdElement.querySelectorAll('.farsi-numbers');
     var englishNumbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     var persianNumbers = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
 
