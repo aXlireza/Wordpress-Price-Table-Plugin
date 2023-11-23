@@ -1,0 +1,56 @@
+#price_table_options_main .categoryitems {
+	display: flex;
+	justify-content: flex-start;
+	padding: 10px;
+	background: #fff;
+	overflow-x: scroll;
+	column-gap: 25px;
+}
+
+#price_table_options_main .categoryitems .icon-item {
+	text-align: center;
+	padding: 5px;
+	border-radius: 3px;
+	/* transition: background-color 0.3s ease; */
+	box-shadow: 0 0 10px 0 rgba(0,0,0,.15);
+	border: 1px solid transparent;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	column-gap: 5px;
+}
+
+#price_table_options_main .categoryitems .icon-item:hover {
+	background-color: #ebebeb; /* Light grey background on hover */
+	border: 1px solid #000;
+}
+
+#price_table_options_main .categoryitems .menu-icon {
+	width: 40px; /* Adjust size as needed */
+	height: auto;
+}
+
+#price_table_options_main .categoryitems .icon-item span {
+	display: block;
+	font-size: 14px; /* Adjust size as needed */
+	color: #333; /* Adjust text color as needed */
+	width: max-content;
+}
+
+#price_table_options_main .categoryitems .icon-item img {
+	width: 40px;
+}
+
+#price_table_options_main .categoryitems .info-box {
+	text-align: center;
+	padding: 10px;
+	margin-top: 10px; /* Adjust as needed */
+	background: #fff;
+	border: 1px solid #ccc;
+	transition: background-color 0.3s ease;
+}
+
+#price_table_options_main .categoryitems .info-box.active {
+	background-color: #ddd; /* Darker background when active */
+}

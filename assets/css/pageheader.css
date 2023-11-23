@@ -1,0 +1,64 @@
+#price_table_options_main #pageheader {
+	display: flex;
+	flex-direction: row;
+	align-items: baseline;
+	padding: 20px;
+	background-color: #f8f8f8;
+	justify-content: space-between;
+}
+
+#price_table_options_main #pageheader .breadcrumb .breadcrumb-item.breadcrumb-item:nth-child(1)::before {
+	content: none;
+}
+#price_table_options_main #pageheader .breadcrumb .breadcrumb-item::before {
+		content: "\f053";
+	font-family: 'Font Awesome 5 Free';
+	color: #a0a0a0;
+	font-size: 10px;
+	margin-left: 15px;
+	font-weight: 900;
+}
+
+#price_table_options_main #pageheader .main-title {
+	font-size: 2em; /* Large font size for desktop */
+	margin: 0;
+}
+
+#price_table_options_main #pageheader .breadcrumb {
+	padding: 0;
+	list-style: none;
+	display: flex;
+	gap: 10px;
+	margin-bottom: 20px; /* Space between breadcrumb and content */
+}
+
+#price_table_options_main #pageheader .breadcrumb-item a {
+	color: #888;
+	text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+	#price_table_options_main #pageheader {
+		align-items: center;
+		text-align: center;
+	}
+
+	#price_table_options_main #pageheader .main-title {
+		font-size: 18px; /* Smaller font size for mobile */
+	}
+
+	#price_table_options_main #pageheader .breadcrumb {
+		width: 100%;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	#price_table_options_main #pageheader .breadcrumb-item,
+	#price_table_options_main #pageheader .breadcrumb-item a {
+		font-size: 12px; /* Smaller font size for mobile */
+	}
+
+	#price_table_options_main #pageheader .breadcrumb-item + #price_table_options_main #pageheader .breadcrumb-item::before {
+		/* Adjust the content if you want a different separator for mobile */
+	}
+}

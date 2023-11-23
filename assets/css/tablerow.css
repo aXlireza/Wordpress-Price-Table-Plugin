@@ -1,0 +1,238 @@
+#price_table_options_main .allrows {
+	display: flex;
+	row-gap: 10px;
+	flex-direction: column;
+}
+
+#price_table_options_main .info-container {margin: 10px}
+
+#price_table_options_main .info-row {
+  display: grid;
+  grid-template-columns: .4fr 2fr 1fr 1fr auto min-content;
+  align-items: center;
+  /* gap: 10px; */
+  /* padding: 10px; */
+  border-radius: 5px;
+  background-color: #f9f9f9; /* Default background color */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 100%; /* Stretch to fit the container */
+}
+
+#price_table_options_main .row-size {
+	font-weight: bold;
+  	text-align: center;
+  	font-size: 2em;
+}
+
+#price_table_options_main .stock-title .title-main {
+    display: block;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+    font-size: 1.3em;
+}
+
+#price_table_options_main .stock-title .title-sub {
+	display: flex;
+	color: #666;
+	font-size: 0.8em;
+	align-items: baseline;
+}
+
+#price_table_options_main .stock-title .title-sub .weight {
+	display: block;
+	color: #15a1ed;
+	font-size: 0.8em;
+	margin: 0 2px;
+}
+
+#price_table_options_main .stock-title .title-sub .unit {
+	display: block;
+	color: #15a1ed;
+	font-size: 0.4em;
+}
+
+#price_table_options_main .price-information {
+	display: flex;
+	align-items: center;
+}
+
+#price_table_options_main .price-information .price {
+	display: flex;
+	align-items: center;
+}
+
+#price_table_options_main .status-box {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 60px;
+	height: 30px;
+	border-radius: 20em;
+	padding: 2px 7px;
+	color: #fff;
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+/* Phone Condition */
+#price_table_options_main .phonecall {
+	width: fit-content;
+	text-decoration: none;
+}
+#price_table_options_main .phonecall .arrow-icon::before {
+	content: "\f095";
+	color: #000;
+	font-weight: bold;
+	border: 2px solid #000;
+	border-radius: 50%;
+	padding: 6px;
+}
+
+#price_table_options_main .phonecall .status-number {
+	color: #000;
+}
+
+/* when the change rate is positive */
+#price_table_options_main .price-information.up .status-box {background-color: #4CAF50}
+#price_table_options_main .price-information.up .phonecall {display: none!important}
+#price_table_options_main .price-information.up .status-box .arrow-icon::before {content: "\f35b"}
+
+/* when the change rate is negative */
+#price_table_options_main .price-information.down .status-box {background-color: #F44336}
+#price_table_options_main .price-information.down .phonecall {display: none!important}
+#price_table_options_main .price-information.down .status-box .arrow-icon::before {content: "\f358"}
+#price_table_options_main .price-information.down .status-box .status-number {direction: ltr}
+
+/* when it's on neutral */
+#price_table_options_main .price-information.neutral .status-box {background-color: #858585}
+#price_table_options_main .price-information.neutral .phonecall {display: none!important}
+#price_table_options_main .price-information.neutral .status-box .arrow-icon::before {content: "\f111"}
+
+/* when the change rate is is to "call" mode */
+#price_table_options_main .price-information.phone .status-box, .price-information.phone .price {display: none!important}
+
+
+
+#price_table_options_main .arrow-icon::before {
+	content: "\f358";
+	font-weight: 400;
+}
+
+#price_table_options_main .status-number {
+	margin-right: 5px;
+}
+
+#price_table_options_main .price span.pricenumber {
+	font-size: 2em;
+	font-weight: 600;
+}
+
+#price_table_options_main .price span.currency {
+	font-size: 13px;
+	font-weight: 200;
+}
+
+#price_table_options_main .price.phonecall {
+	display: none;
+}
+
+#price_table_options_main .date-tag {
+	display: flex;
+	justify-content: center;
+}
+
+#price_table_options_main .date-tag > div {
+	width: fit-content;
+}
+
+#price_table_options_main .date-tag .date {
+display: block;
+        color: #15a1ed;
+/* Date styling */
+}
+
+#price_table_options_main .date-tag .tag {
+	display: block;
+	color: #fff;
+	background-color: #15a1ed;
+	font-size: 0.8em;
+	text-align: center;
+	border-radius: 2px;
+}
+
+#price_table_options_main .action-buttons .chart-btn,
+#price_table_options_main .action-buttons .like-btn {
+	background: none;
+	border: 1px solid #ddd;
+	border-radius: 50%;
+	padding: 5px 10px;
+	margin-right: 5px;
+	cursor: pointer;
+	aspect-ratio: 1 / 1;
+}
+
+#price_table_options_main .action-buttons .chart-btn::before {
+	content: "\f080";
+	color: red; /* Or your chosen heart color */
+}
+
+#price_table_options_main .action-buttons .like-btn::before {
+	content: "\f004";
+	color: red; /* Or your chosen heart color */
+}
+#price_table_options_main .action-buttons {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	align-content: center;
+	align-items: center;
+}
+#price_table_options_main .action-buttons .chart-btn pre {
+	margin: 0;
+	font-family: 'IranYekanWebRegular';
+	font-size: 10px;
+	color: #78909C;
+}
+
+#price_table_options_main .description-label {
+	writing-mode: vertical-lr;
+	transform: rotate(180deg);
+	white-space: nowrap;
+	align-self: stretch; /* Stretch to fill the grid row height */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 5px; /* Add padding to the label */
+	border-radius: 5px; /* Optional: add border-radius to the label */
+	background-color: #E0E0E0;
+	color: #000;
+	text-decoration: none;
+	margin-right: 5px;
+}
+
+/* Hover effects */
+#price_table_options_main .info-row:hover {
+  background-color: #f0f0f0; /* Light grey background */
+  transform: translateX(10px); /* Slight move to the right */
+}
+
+#price_table_options_main .info-row:hover .description-label {
+  background-color: #2196F3; /* Blue background for the last column */
+  color: #fff;
+  padding: 5px; /* Add padding to the label */
+  border-radius: 5px; /* Optional: add border-radius to the label */
+}
+
+@media (max-width: 768px) {
+#price_table_options_main .info-row {
+	grid-template-columns: auto auto auto min-content;
+    /* gap: 5px; */
+  }
+	
+  #price_table_options_main .date-tag,
+  #price_table_options_main .action-buttons {display: none}
+
+  #price_table_options_main .stock-title .title-sub,
+  #price_table_options_main .date-tag .tag {font-size: 0.7em}
+}

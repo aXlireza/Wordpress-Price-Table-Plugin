@@ -1,0 +1,50 @@
+#price_table_options_main .table_info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #59595c;
+	padding: 1em;
+}
+
+#price_table_options_main .table_info > a {
+	font-size: 1.3em;
+	font-family: 'IranYekanWebRegular';
+	color: #fff;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+#price_table_options_main .table_info .custom-select {
+	color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px; /* Adjust the font size as needed */
+  text-align: center;
+	background: #007bff; /* Sample button color based on the image */
+}
+
+#price_table_options_main .table_info .custom-select-wrapper {
+	background: #007bff; /* Sample button color based on the image */
+	padding: 10px; /* Adjust the padding as needed */
+	border-radius: 5em;
+}
+
+/* Optionally: add styles for when the select box is open */
+#price_table_options_main .table_info .custom-select:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 113, 255, 0.5);
+}
+
+/* Style for options */
+#price_table_options_main .table_info .custom-select option {
+  background: white;
+  color: #007bff;
+}
+
+#price_table_options_main .rate_checked_warning.hidden {
+	display: none;
+}
+
+#price_table_options_main .rate_checked_warning {
+	display: block;
+}

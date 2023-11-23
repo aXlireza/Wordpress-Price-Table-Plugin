@@ -1,0 +1,100 @@
+#price_table_options_main.single-page .custom-table {
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#price_table_options_main.single-page .table-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px; /* Adjust as needed */
+}
+
+#price_table_options_main.single-page .table-cell {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 2px solid #e2e2e2; /* Line under each box */
+    flex-basis: 48%; /* Adjust the width of each cell */
+}
+
+#price_table_options_main.single-page .cell-title {
+    margin-right: 8px; /* Adjust the space between title and value */
+    color: #737373;
+}
+
+#price_table_options_main.single-page a.cell-value {
+    color: #1d92d1;
+    text-decoration: none;
+}
+
+#price_table_options_main.single-page .cell-value {
+    flex-grow: 1;
+    text-align: left;
+}
+
+
+
+
+#price_table_options_main.single-page .card-container {
+    width: 40%;
+    margin: 0 auto;
+}
+
+#price_table_options_main.single-page .card {
+    background-color: #fff; /* Card background color */
+    border-radius: 8px; /* Rounded corners for card */
+    margin-bottom: 15px; /* Space between cards */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+#price_table_options_main.single-page .card-header, .card-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    align-items: center;
+}
+
+#price_table_options_main.single-page .card-header {
+    background-color: #007bff; /* Header background color */
+    color: #fff; /* Header text color */
+    border-top-left-radius: 8px; /* Rounded corners for header */
+    border-top-right-radius: 8px;
+}
+
+#price_table_options_main.single-page .card-content {
+    border-bottom: 1px solid #f0f0f0; /* Light line below each card content */
+}
+
+#price_table_options_main.single-page .date, .price, .amount {
+    flex-basis: 33%; /* Divide space evenly */
+    text-align: center;
+}
+
+/* Additional styling */
+#price_table_options_main.single-page .price {
+    color: #007bff; /* Highlight price color */
+}
+
+#price_table_options_main.single-page .amount {
+    color: #28a745; /* Highlight amount color */
+}
+
+
+#price_table_options_main.single-page #first_row_singlepage {
+    width: 100%;
+    display: flex;
+}
+
+#price_table_options_main.single-page {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+    #price_table_options_main.single-page #first_row_singlepage {flex-direction: column}
+    #price_table_options_main.single-page .card-container {width: 90%}
+    #price_table_options_main.single-page .custom-table {width: 90%}
+}

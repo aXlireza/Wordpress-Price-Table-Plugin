@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'FontAwesomeBrands';
+    src: url('fa-brands-400.woff2') format('woff2'),
+            url('fa-brands-400.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FontAwesomeRegular';
+    src: url('fa-regular-400.woff2') format('woff2'),
+            url('fa-regular-400.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FontAwesomeSolid';
+    src: url('fa-solid-900.woff2') format('woff2'),
+            url('fa-solid-900.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IranYekanWebBold';
+    src: url('iranyekanwebboldfanum.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IranYekanWebLight';
+    src: url('iranyekanweblight.woff') format('woff');
+    font-weight: 300; /* Light */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IranYekanWebMedium';
+    src: url('iranyekanwebmediumfanum.woff') format('woff');
+    font-weight: 500; /* Medium */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IranYekanWebRegular';
+    src: url('iranyekanwebregular.woff') format('woff'),
+            url('iranyekanwebregularfanum.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

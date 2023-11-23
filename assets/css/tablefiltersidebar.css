@@ -1,0 +1,116 @@
+#price_table_options_main #tablefiltersidebar {
+	width: 250px; /* Adjust width as needed */
+	background: #fff;
+	padding: 20px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+#price_table_options_main #tablefiltersidebar .sidebar-header h2 {
+	margin-bottom: 15px;
+	word-spacing: -3px;
+	font-size: 14px;
+	font-weight: 700;
+	text-align: center;
+	margin-top: 5px;
+	color: #15a1ed;
+}
+
+#price_table_options_main #tablefiltersidebar .button-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#price_table_options_main #tablefiltersidebar .button-group button {
+	width: 48%;
+	padding: 10px;
+	margin-bottom: 10px;
+	background: #007bff00;
+    border: 1px solid #007bff;
+	border-radius: 3px;
+	color: #000;
+	cursor: pointer;
+}
+
+#price_table_options_main #tablefiltersidebar .button-group button.active {
+    background: #007bff;
+}
+
+#price_table_options_main #tablefiltersidebar .button-group button:hover {
+	background: #0056b3;
+}
+
+#price_table_options_main #tablefiltersidebar .button-group button#btn-factories i::before {
+	content: "\f275";
+	font-weight: 900;
+    font-style: normal;
+}
+#price_table_options_main #tablefiltersidebar .button-group button#btn-sizes i::before {
+	content: "\f565";
+	font-weight: 900;
+    font-style: normal;
+}
+
+#price_table_options_main #tablefiltersidebar .tag-selector {
+	margin-bottom: 20px;
+}
+
+
+#price_table_options_main #tablefiltersidebar .hidden {
+	display: none;
+}
+
+#price_table_options_main .size_tags_hidden, #price_table_options_main .factory_tags_hidden {display: none}
+
+
+
+
+
+#price_table_options_main .tag-input-container {
+	position: relative;
+	width: 300px;
+}
+
+#price_table_options_main .tag-input {
+	width: max-content;
+	padding: 10px;
+	font-size: 16px;
+}
+
+#price_table_options_main .tag-list {
+	position: absolute;
+	width: 100%;
+	border: 1px solid #ccc;
+	background: #fff;
+	z-index: 1000;
+}
+
+#price_table_options_main .tag-list div {
+	padding: 10px;
+	cursor: pointer;
+}
+
+#price_table_options_main .tag-list div:hover {
+	background-color: #f0f0f0;
+}
+
+#price_table_options_main .selected-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+#price_table_options_main .selected-tag {
+  background: #007bff;
+  border-radius: 3px;
+  padding: 5px 10px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+#price_table_options_main .tag-input-container {
+  position: relative;
+  width: 300px;
+}

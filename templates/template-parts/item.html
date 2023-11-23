@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Row Component</title>
+	<link rel="stylesheet" href="/fontawesome.css" />
+	<link rel="stylesheet" href="/webfonts/font.css" />
+	<link rel="stylesheet" href="/general.css" />
+	<link rel="stylesheet" href="/row.css" />
+	<link rel="stylesheet" href="/tablehead.css" />
+	<link rel="stylesheet" href="/tableinfo.css" />
+	<link rel="stylesheet" href="/tablerate.css" />
+	<link rel="stylesheet" href="/categoryitems.css" />
+	<link rel="stylesheet" href="/pageheader.css" />
+	<link rel="stylesheet" href="/tablefiltersidebar.css" />
+</head>
+<body>
+
+	<!-- breadcrumb and page title -->
+	<header id="pageheader">
+    <h1 class="main-title">قیمت نوری</h1>
+    <nav aria-label="Breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">خانه</a></li>
+        <li class="breadcrumb-item"><a href="#">فیلم</a></li>
+        <li class="breadcrumb-item"><a href="#">نوری</a></li>
+      </ol>
+    </nav>
+  </header>
+
+	<!-- category items -->
+	<div class="categoryitems">
+    <a href="#" class="icon-item">
+      <img src="https://developer.mozilla.org/pimg/aHR0cHM6Ly9zLnprY2RuLm5ldC9BZHZlcnRpc2Vycy85YjZlMTA4NDE0MjY0MGNiOWYzOTc5ZjZmM2ZlNDA4OC5qcGc%3D.1t%2BPlRgz29JhDFsTbNWHSXwT%2BivJ2P33s17XwEDOVQ4%3D" alt="Icon Description">
+      <span>نام آیکون</span>
+		</a>
+		<a href="#" class="icon-item">
+      <img src="https://developer.mozilla.org/pimg/aHR0cHM6Ly9zLnprY2RuLm5ldC9BZHZlcnRpc2Vycy85YjZlMTA4NDE0MjY0MGNiOWYzOTc5ZjZmM2ZlNDA4OC5qcGc%3D.1t%2BPlRgz29JhDFsTbNWHSXwT%2BivJ2P33s17XwEDOVQ4%3D" alt="Icon Description">
+      <span>نام آیکون</span>
+		</a>
+		<a href="#" class="icon-item">
+      <img src="https://developer.mozilla.org/pimg/aHR0cHM6Ly9zLnprY2RuLm5ldC9BZHZlcnRpc2Vycy85YjZlMTA4NDE0MjY0MGNiOWYzOTc5ZjZmM2ZlNDA4OC5qcGc%3D.1t%2BPlRgz29JhDFsTbNWHSXwT%2BivJ2P33s17XwEDOVQ4%3D" alt="Icon Description">
+      <span>نام آیکون</span>
+		</a>
+		<a href="#" class="icon-item">
+      <img src="https://developer.mozilla.org/pimg/aHR0cHM6Ly9zLnprY2RuLm5ldC9BZHZlcnRpc2Vycy85YjZlMTA4NDE0MjY0MGNiOWYzOTc5ZjZmM2ZlNDA4OC5qcGc%3D.1t%2BPlRgz29JhDFsTbNWHSXwT%2BivJ2P33s17XwEDOVQ4%3D" alt="Icon Description">
+      <span>نام آیکون</span>
+		</a>
+		<a href="#" class="icon-item">
+      <img src="https://developer.mozilla.org/pimg/aHR0cHM6Ly9zLnprY2RuLm5ldC9BZHZlcnRpc2Vycy85YjZlMTA4NDE0MjY0MGNiOWYzOTc5ZjZmM2ZlNDA4OC5qcGc%3D.1t%2BPlRgz29JhDFsTbNWHSXwT%2BivJ2P33s17XwEDOVQ4%3D" alt="Icon Description">
+      <span>نام آیکون</span>
+		</a>
+		<a href="#" class="icon-item">
+      <img src="https://developer.mozilla.org/pimg/aHR0cHM6Ly9zLnprY2RuLm5ldC9BZHZlcnRpc2Vycy85YjZlMTA4NDE0MjY0MGNiOWYzOTc5ZjZmM2ZlNDA4OC5qcGc%3D.1t%2BPlRgz29JhDFsTbNWHSXwT%2BivJ2P33s17XwEDOVQ4%3D" alt="Icon Description">
+      <span>نام آیکون</span>
+		</a>
+
+  </div>
+
+	<main>
+		<!-- sidebar -->
+		<sidebar id="tablefiltersidebar">
+			<div class="sidebar-header">
+				<h2>اولویت نمایش بر اساس</h2>
+			</div>
+			<div class="button-group">
+				<button id="btn-tags">برچسب</button>
+				<button id="btn-categories">دسته بندی</button>
+			</div>
+			<div class="tag-selector" id="tags">
+				<div class="tag-input-container">
+					<input type="text" id="tag-input" placeholder="کارخانه تولید کننده" class="tag-input" onfocus="showSuggestions()" oninput="filterFunction(this)" onblur="hideSuggestions()">
+					<div id="tag-list" class="dropdown-content hidden">
+						<!-- Tag suggestions will be populated here -->
+					</div>
+				</div>
+				<input type="text" placeholder="کارخانه تولید کننده" class="tag-input">
+				<input type="text" placeholder="سایر" class="tag-input">
+			</div>
+			<div class="tag-selector hidden" id="categories">
+				<input type="text" placeholder="دسته بندی اول" class="tag-input">
+				<input type="text" placeholder="دسته بندی دوم" class="tag-input">
+			</div>
+		</sidebar>
+
+		
+		<section id="mainbody">
+			<!-- table rate checkbox -->
+			<div class="ratebox-container">
+				<div class="checkbox-container">
+					<input type="checkbox" id="toggleText" />
+					<label for="toggleText">قیمت‌ها بر اساس آخرین نوع فعال</label>
+				</div>
+				<div class="text-container" id="textChange">
+					قیمت های درج شده برای یک ظرفیت می بـاشد.
+				</div>
+			</div>
+		
+			<!-- table title and switch -->
+			<section id="table_info">
+				<a href="#">قیمت تیرآهن ذوب آهن اصفهان</a>
+				<div class="custom-select-wrapper">
+					<select class="custom-select">
+						<option value="">انتخاب کارخانه</option>
+						<option value="option1">گزینه ۱</option>
+						<option value="option2">گزینه ۲</option>
+						<option value="option3">گزینه ۳</option>
+						<!-- More options here -->
+					</select>
+				</div>
+			</section>
+		
+			<!-- table head -->
+			<nav class="navbar">
+				<ul class="nav-menu">
+					<li class="nav-item item-size">سایز</li>
+					<li class="nav-item item-info">مشخصات محصول</li>
+					<li class="nav-item item-price">قیمت و نوسان (تومان)</li>
+					<li class="nav-item item-date" style="text-align: center;">تاریخ</li>
+					<li class="nav-item item-btns">
+						<button class="nav-button">دانلود قیمت‌ها</button>
+					</li>
+				</ul>
+			</nav>
+		
+			<!-- Table Rows -->
+			<div class="allrows">
+				<div class="info-row rtl">
+					<div class="row-size farsi-numbers">1</div>
+					<div class="stock-title">
+						<a href="#" class="title-main">قیمت بر اساس آخرین تغییرات</a>
+						<span class="title-sub">کارگزاری فردا آفرین اصفهان<span class="weight farsi-numbers">125</span><span class="unit">کیلوگرم</span></span>
+					</div>
+					<div class="price-information">
+						<div class="status-box up">
+							<span class="arrow-icon fa-icon"></span> <!-- Replace with actual icon -->
+							<span class="status-number farsi-numbers">+1,891</span>
+						</div>
+						<div class="price">
+							<span class="farsi-numbers pricenumber">51,300</span>
+							<span class="currency">تومان</span>
+						</div>
+					</div>
+					<div class="date-tag">
+						<div>
+							<span class="date farsi-numbers">1402/08/25</span>
+							<span class="tag">امروز</span>
+						</div>
+					</div>
+					<div class="action-buttons">
+						<button class="chart-btn fa-icon">
+							<pre>نمودار</pre>
+						</button>
+						<button class="like-btn fa-icon"></button> <!-- Replace with actual icon -->
+					</div>
+					<a href="#" class="description-label">توضیحات</a>
+				</div>
+				<div class="info-row rtl">
+					<div class="row-size farsi-numbers">1</div>
+					<div class="stock-title">
+						<a href="#" class="title-main">قیمت بر اساس آخرین تغییرات</a>
+						<span class="title-sub">کارگزاری فردا آفرین اصفهان<span class="weight farsi-numbers">125</span><span class="unit">کیلوگرم</span></span>
+					</div>
+					<div class="price-information">
+						<div class="status-box down">
+							<span class="arrow-icon fa-icon"></span> <!-- Replace with actual icon -->
+							<span class="status-number farsi-numbers">+1,891</span>
+						</div>
+						<div class="price">
+							<span class="farsi-numbers pricenumber">51,300</span>
+							<span class="currency">تومان</span>
+						</div>
+					</div>
+					<div class="date-tag">
+						<div>
+							<span class="date farsi-numbers">1402/08/25</span>
+							<span class="tag">امروز</span>
+						</div>
+					</div>
+					<div class="action-buttons">
+						<button class="chart-btn fa-icon">
+							<pre>نمودار</pre>
+						</button>
+						<button class="like-btn fa-icon"></button> <!-- Replace with actual icon -->
+					</div>
+					<a href="#" class="description-label">توضیحات</a>
+				</div>
+				<div class="info-row rtl">
+					<div class="row-size farsi-numbers">1</div>
+					<div class="stock-title">
+						<a href="#" class="title-main">قیمت بر اساس آخرین تغییرات</a>
+						<span class="title-sub">کارگزاری فردا آفرین اصفهان<span class="weight farsi-numbers">125</span><span class="unit">کیلوگرم</span></span>
+					</div>
+					<div class="price-information">
+						<a href="tel:1235" class="status-box phone">
+							<span class="arrow-icon fa-icon"></span> <!-- Replace with actual icon -->
+							<span class="status-number farsi-numbers">تماس بگیرید</span>
+						</a>
+						<!-- <div class="price">
+							<span class="farsi-numbers pricenumber">51,300</span>
+							<span class="currency">تومان</span>
+						</div> -->
+					</div>
+					<div class="date-tag">
+						<div>
+							<span class="date farsi-numbers">1402/08/25</span>
+							<span class="tag">امروز</span>
+						</div>
+					</div>
+					<div class="action-buttons">
+						<button class="chart-btn fa-icon">
+							<pre>نمودار</pre>
+						</button>
+						<button class="like-btn fa-icon"></button> <!-- Replace with actual icon -->
+					</div>
+					<a href="#" class="description-label">توضیحات</a>
+				</div>
+			</div>
+		</section>
+	</main>
+	
+</body>
+<script src="/main.js"></script>
+</html>

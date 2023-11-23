@@ -1,0 +1,54 @@
+body #price_table_options_main {
+	font-family: 'IranYekanWebRegular', sans-serif; /* Replace with actual font-family */
+	margin: 0;
+	padding: 0;
+	background: #f7f7f7; /* Background color similar to the screenshot */
+}
+
+#price_table_options_main .navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+	background: #fff; /* Assuming a white navbar background */
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+#price_table_options_main .nav-menu {
+	display: grid;
+	grid-template-columns: .4fr 2fr 1fr 1fr auto;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+#price_table_options_main .nav-link {
+	text-decoration: none;
+	color: #333; /* Color for the links */
+	font-size: 1rem; /* Adjust size as needed */
+	padding: 5px 10px;
+}
+
+#price_table_options_main .nav-button {
+	padding: 5px 15px;
+	background-color: #0056b3; /* Button background color */
+	border: none;
+	border-radius: 4px;
+	color: #fff; /* Button text color */
+	cursor: pointer;
+}
+
+#price_table_options_main .nav-button:hover {
+	background-color: #003d82; /* Darker background on hover */
+}
+
+@media (max-width: 768px) {
+  #price_table_options_main .navbar .nav-menu {
+    grid-template-columns: .1fr auto auto;
+  }
+
+	#price_table_options_main .navbar .nav-menu .nav-item.item-date,
+	#price_table_options_main .navbar .nav-menu .nav-item.item-btns
+	{display: none}
+}

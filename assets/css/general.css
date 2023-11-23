@@ -1,0 +1,24 @@
+#price_table_options_main .fa-icon {font-family: 'Font Awesome 5 Free'}
+#price_table_options_main .rtl {direction: rtl}
+
+#price_table_options_main .farsi-numbers {
+    font-family: 'IranYekanWebRegular', sans-serif; /* Use the font that supports Persian digits */
+    font-feature-settings: 'numr';
+}
+
+#price_table_options_main .hidden {
+    display: none;
+}
+
+#price_table_options_main {
+	display: flex;
+    flex-direction: row;
+	font-family: 'IranYekanWebRegular';
+    direction: rtl;
+}
+
+@media (max-width: 768px) {
+  #price_table_options_main {
+      flex-direction: column-reverse;
+  }
+}
