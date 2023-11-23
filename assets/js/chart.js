@@ -1,10 +1,6 @@
 // Check if the specific ID exists
-// var specificIdElement = document.getElementById('price_table_options_main');
-
 if (specificIdElement) {
   let popupchart_on_pricehistory = null
-  // specificIdElement = document.getElementById('price_table_options_main');
-
   function chartpopup(post_id, prices, dates) {
 
     // check for all the popups to be closed
@@ -30,12 +26,13 @@ if (specificIdElement) {
         scales: {y: {beginAtZero: true}}
       }
     });
-
-    specificIdElement.querySelector(`#popupWrapper_${post_id}`).classList.toggle("active")
+    // check if the page does have any popup element
+    if (specificIdElement.querySelector('.popup-wrapper') != null) specificIdElement.querySelector(`#popupWrapper_${post_id}`).classList.toggle("active")
   }
 
   function close_chart_popup(post_id) {
-    specificIdElement.querySelector(`#popupWrapper_${post_id}`).classList.toggle("active")
+    // check if the page does have any popup element
+    if (specificIdElement.querySelector('.popup-wrapper') != null) specificIdElement.querySelector(`#popupWrapper_${post_id}`).classList.toggle("active")
     popupchart_on_pricehistory.destroy()
   }
 }
