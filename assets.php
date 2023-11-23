@@ -33,7 +33,7 @@ add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
 
 add_action('wp_head', 'add_custom_css_to_head');
 function add_custom_css_to_head() {
-    $stored_css = get_option('custom_css');
+    $stored_css = get_theme_mod('price_table_custom_css');
     if (!empty($stored_css)) {
         echo '<style type="text/css">' . $stored_css . '</style>';
     }

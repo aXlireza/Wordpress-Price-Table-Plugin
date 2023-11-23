@@ -26,61 +26,27 @@ function create_price_history_table() {
     dbDelta($sql);
 }
 
-// CSS Custom Settings init
-function my_plugin_settings_page() {
-    add_options_page(
-        'My Plugin Settings', // Page Title
-        'My Plugin Settings', // Menu Title
-        'manage_options', // Capability
-        'my-plugin-settings', // Menu Slug
-        'my_plugin_settings_content' // Callback function to display content
-    );
-}
-add_action('admin_menu', 'my_plugin_settings_page');
-function my_plugin_settings_content() {
-    ?>
-    <div class="wrap">
-        <h1>My Plugin Settings</h1>
-        <form method="post" action="options.php">
-            <?php settings_fields('my-plugin-settings-group'); ?>
-            <?php do_settings_sections('my-plugin-settings'); ?>
-            <?php submit_button(); ?>
-        </form>
-    </div>
-    <?php
-}
-function my_plugin_settings_init() {
-    register_setting(
-        'my-plugin-settings-group', // Option Group
-        'custom_css' // Option Name
-    );
+add_action('customize_register', 'add_custom_css_customizer');
 
-    add_settings_section(
-        'custom_css_section', // Section ID
-        'Custom CSS', // Section Title
-        'my_plugin_custom_css_section_callback', // Callback function to display section content
-        'my-plugin-settings' // Page Slug
-    );
+function add_custom_css_customizer($wp_customize) {
+    $wp_customize->add_section('price_table_custom_css_section', array(
+        'title' => 'Price Table Custom CSS',
+        'priority' => 30,
+    ));
 
-    add_settings_field(
-        'custom_css_field', // Field ID
-        'Enter CSS here', // Field Title
-        'my_plugin_custom_css_field_callback', // Callback function to display field content
-        'my-plugin-settings', // Page Slug
-        'custom_css_section' // Section ID
-    );
-}
-add_action('admin_init', 'my_plugin_settings_init');
-function my_plugin_custom_css_section_callback() {
-    echo 'Enter your custom CSS below:';
+    $wp_customize->add_setting('price_table_custom_css', array(
+        'default' => '',
+        'sanitize_callback' => 'wp_filter_nohtml_kses', // Sanitize the input
+    ));
+
+    $wp_customize->add_control('custom_css_control', array(
+        'label' => 'Enter your custom CSS here:',
+        'section' => 'price_table_custom_css_section',
+        'settings' => 'price_table_custom_css',
+        'type' => 'textarea',
+    ));
 }
 
-function my_plugin_custom_css_field_callback() {
-    $custom_css = get_option('custom_css');
-    ?>
-    <textarea id="custom_css" name="custom_css" rows="8" cols="50"><?php echo esc_textarea($custom_css); ?></textarea>
-    <?php
-}
 
 
 
