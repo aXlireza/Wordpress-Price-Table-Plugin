@@ -31,11 +31,10 @@ function enqueue_custom_scripts() {
 add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
 
 
-// function add_chart_js_attribute($tag, $handle) {
-//     if ('pricetable-chart-js' === $handle) {
-//         $tag = str_replace(' src', ' data-src', $tag);
-//         $tag = str_replace('></script>', ' defer="defer"></script>', $tag);
-//     }
-//     return $tag;
-// }
-// add_filter('script_loader_tag', 'add_chart_js_attribute', 10, 2);
+add_action('wp_head', 'add_custom_css_to_head');
+function add_custom_css_to_head() {
+    $stored_css = get_option('custom_css');
+    if (!empty($stored_css)) {
+        echo '<style type="text/css">' . $stored_css . '</style>';
+    }
+}
