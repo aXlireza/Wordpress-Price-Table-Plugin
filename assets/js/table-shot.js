@@ -4,7 +4,7 @@ if (specificIdElement) {
         [...specificIdElement.querySelectorAll('.nav-button')].forEach(btn => {
             const tableid = btn.getAttribute('tableid');
             btn.addEventListener('click', function() {
-                html2canvas(specificIdElement.getElementById(tableid)).then(function(canvas) {
+                html2canvas(specificIdElement.querySelector(`#${tableid}`)).then(function(canvas) {
                     // Create an image from the canvas
                     var img = canvas.toDataURL('image/png');
 
