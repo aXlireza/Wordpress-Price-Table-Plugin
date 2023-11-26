@@ -1,5 +1,6 @@
 // Check if the specific ID exists
 if (specificIdElement) {
+    const the_rate = 0.09;
     function enable_rate() {
         specificIdElement.querySelector('#pricetable_mainbody_by_factory .checkbox-container input').checked = true;
         const textContainer = specificIdElement.querySelector('#pricetable_mainbody_by_factory .ratebox-container .text-container');
@@ -8,7 +9,7 @@ if (specificIdElement) {
         [...specificIdElement.querySelectorAll('#pricetable_mainbody_by_factory .rate_checked_warning')].forEach(item => item.classList.remove('hidden'));
         [...specificIdElement.querySelectorAll("#pricetable_mainbody_by_factory .price .pricenumber")].forEach(price => {
             const pricenum = Number(price.getAttribute('original_price'));
-            const newprice = pricenum + pricenum*9;
+            const newprice = pricenum + pricenum*the_rate;
             price.innerHTML = en_to_fa_num(newprice.toString())
         })
     }
@@ -35,7 +36,7 @@ if (specificIdElement) {
     // enable the rates for the tables renderred by size
     [...specificIdElement.querySelectorAll("#pricetable_mainbody_by_size .price .pricenumber")].forEach(price => {
         const pricenum = Number(price.getAttribute('original_price'));
-        const newprice = pricenum + pricenum*9;
+        const newprice = pricenum + pricenum*the_rate;
         price.innerHTML = en_to_fa_num(newprice.toString())
     })
 }
