@@ -110,7 +110,7 @@ if ($posts_query->have_posts()) {
     foreach ($factory_posts as $factory_name => $factory_posts_array) {
         foreach ($factory_posts_array['posts'] as $post) {
             // Get the size for the current post
-            $size = get_post_custom_values("_thickness", $post->ID)[0];
+            $size = get_post_custom_values("_thickness", $post->ID) ? get_post_custom_values("_thickness", $post->ID)[0] : '';
 
             // Check if the size already exists in the sizes_list array
             if (!array_key_exists($size, $sizes_list)) {
@@ -209,9 +209,9 @@ if ($posts_query->have_posts()) {
 function display_row($post_id, $your_select_field_value, $class, $customid) {
     $factory_name = wp_get_post_terms($post_id, 'price_table_factory')[0]->name;
     $factory_id = wp_get_post_terms($post_id, 'price_table_factory')[0]->term_id;
-    $your_select_field_value_value = get_post_custom_values("_thickness", $post_id)[0];
-    $alloy = get_post_custom_values('_alloy', $post_id)[0];
-    $unit = get_post_custom_values('_unit', $post_id)[0];
+    $your_select_field_value_value = get_post_custom_values("_thickness", $post_id) ? get_post_custom_values("_thickness", $post_id)[0] : '';
+    $alloy = get_post_custom_values('_alloy', $post_id) ? get_post_custom_values('_alloy', $post_id)[0] : '';
+    $unit = get_post_custom_values('_unit', $post_id) ? get_post_custom_values('_unit', $post_id)[0] : '';
     $cta = get_post_custom_values('_cta', $post_id) ? get_post_custom_values('_cta', $post_id)[0] : 'off';
     $price = get_post_custom_values('current_price', $post_id) ? get_post_custom_values('current_price', $post_id)[0] : 0;
     $price_change = get_post_custom_values('price_change', $post_id) ? get_post_custom_values('price_change', $post_id)[0] : 0;
