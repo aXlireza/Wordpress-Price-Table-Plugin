@@ -66,6 +66,7 @@ function custom_price_table_post_type() {
         'exclude_from_search'   => false,
         'has_archive'           => true,
         'capability_type'       => 'post',
+        'show_in_rest'          => true,
         'taxonomies'            => array('price_table_category', 'price_table_factory'), // Add category and factory taxonomies
     );
     
@@ -74,6 +75,7 @@ function custom_price_table_post_type() {
 
 include plugin_dir_path(__FILE__) . 'taxonomies.php';
 include plugin_dir_path(__FILE__) . 'custom-fields.php';
+include plugin_dir_path(__FILE__) . 'restful.php';
 include plugin_dir_path(__FILE__) . 'quick-edit.php';
 include plugin_dir_path(__FILE__) . 'quick-upload.php';
 include plugin_dir_path(__FILE__) . 'home/shortcode.php';

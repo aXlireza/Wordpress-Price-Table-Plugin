@@ -16,6 +16,7 @@ function custom_price_table_tags_taxonomy() {
         'show_in_menu'      => true,
         'show_admin_column' => true,
         'query_var'         => true,
+        'show_in_rest'      => true,
         'rewrite'           => array('slug' => 'custom-tags'),
     );
 
@@ -39,6 +40,7 @@ function custom_price_table_categories_taxonomy() {
         'show_in_menu'      => true,
         'show_admin_column' => true,
         'query_var'         => true,
+        'show_in_rest'      => true,
         'rewrite'           => array('slug' => 'price_categories'),
     );
 
@@ -62,6 +64,7 @@ function custom_price_table_factory_taxonomy() {
         'show_in_menu'      => true,
         'show_admin_column' => true,
         'query_var'         => true,
+        'show_in_rest'      => true,
         'rewrite'           => array('slug' => 'price_factory'),
     );
     
