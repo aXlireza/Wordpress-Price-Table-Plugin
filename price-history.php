@@ -114,7 +114,7 @@ function display_price_history_meta_box($post) {
 
     // Display a button to flush all price history records
     echo '<form method="post" action="">';
-    echo '<input type="submit" name="flush_price_history_submit" class="button" value="Flush Price History">';
+    echo '<input style="background-color: red; color: black; border-color: black" type="submit" name="flush_price_history_submit" class="button" value="Flush Price History">';
     echo '</form>';
 }
 
