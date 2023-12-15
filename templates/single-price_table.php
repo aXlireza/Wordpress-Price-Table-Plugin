@@ -114,10 +114,11 @@ while (have_posts()) : the_post();
                         <span>نوسان (تومان)</span>
                     </div>";
                     foreach ($price_history as $record) {
+                        $change_sign = strval($record[2])[0] == '-' ? 'down' : 'up';
                         echo "<div class=\"card-content\">
                             <div class=\"date farsi-numbers\">$record[1]</div>
-                            <div class=\"price farsi-numbers\">$record[0]</div>
-                            <div class=\"amount farsi-numbers\">$record[2]</div>
+                            <div class=\"price farsi-numbers \">$record[0]</div>
+                            <div dir='ltr' class=\"$change_sign amount farsi-numbers\">$record[2]</div>
                         </div>";
                     }
                 echo "</div>

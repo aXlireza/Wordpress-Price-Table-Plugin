@@ -78,9 +78,9 @@
     color: #007bff; /* Highlight price color */
 }
 
-#price_table_options_main.single-page .amount {
-    color: #28a745; /* Highlight amount color */
-}
+#price_table_options_main.single-page .amount.up {color: #28a745}
+#price_table_options_main.single-page .amount.down {color: #a72841}
+
 
 
 #price_table_options_main.single-page #first_row_singlepage {
