@@ -209,7 +209,7 @@ if ($posts_query->have_posts()) {
 function display_row($post_id, $your_select_field_value, $class, $customid) {
     $factory_name = wp_get_post_terms($post_id, 'price_table_factory')[0]->name;
     $factory_id = wp_get_post_terms($post_id, 'price_table_factory')[0]->term_id;
-    $your_select_field_value_value = get_post_custom_values("_thickness", $post_id) ? get_post_custom_values("_thickness", $post_id)[0] : '';
+    $your_select_field_value_value = get_post_custom_values("_size", $post_id) ? get_post_custom_values("_size", $post_id)[0] : get_post_custom_values("_thickness", $post_id)[0];
     $alloy = get_post_custom_values('_alloy', $post_id) ? get_post_custom_values('_alloy', $post_id)[0] : '';
     $unit = get_post_custom_values('_unit', $post_id) ? get_post_custom_values('_unit', $post_id)[0] : '';
     $cta = get_post_custom_values('_cta', $post_id) ? get_post_custom_values('_cta', $post_id)[0] : 'off';
