@@ -57,8 +57,8 @@ while (have_posts()) : the_post();
 
     $price_history[0][2] = 0;
     for ($i = 1; $i < count($price_history); $i++) {
-        $previous = $price_history[$i - 1][0];
-        $current = $price_history[$i][0];
+        $previous = str_replace(',', '', $price_history[$i - 1][0]);
+        $current = str_replace(',', '', $price_history[$i][0]);
         $change = $current - $previous;
         $price_history[$i][2] = $change;
     }
