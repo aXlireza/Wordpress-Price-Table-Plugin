@@ -41,6 +41,8 @@ function table_row($id, $link, $title, $desc, $size, $weight, $weight_unit, $dat
     $price_history_values = str_replace("\"", "'", $price_history_values);
     $price_history_values = str_replace(",", "_", $price_history_values);
 
+    $sanitized_price = str_replace(',', '', $price);
+
     echo "<div class=\"info_row_container $class\" id=\"$customid\">
         <div id=\"$id\" class=\"info-row rtl\">
             <div class=\"row-size farsi-numbers\">$size</div>
@@ -54,7 +56,7 @@ function table_row($id, $link, $title, $desc, $size, $weight, $weight_unit, $dat
                     <span class=\"status-number farsi-numbers\">$changes</span>
                 </div>
                 <div class=\"price\">
-                    <span class=\"farsi-numbers pricenumber\" original_price=\"$price\">$price</span>
+                    <span class=\"farsi-numbers pricenumber\" original_price=\"$sanitized_price\">$price</span>
                     <span class=\"currency\">تومان</span>
                 </div>
                 <a href=\"tel:$tel\" class=\"phonecall\">

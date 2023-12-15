@@ -10,7 +10,7 @@ if (specificIdElement) {
         [...specificIdElement.querySelectorAll("#pricetable_mainbody_by_factory .price .pricenumber")].forEach(price => {
             const pricenum = Number(price.getAttribute('original_price'));
             const newprice = pricenum + pricenum*the_rate;
-            price.innerHTML = en_to_fa_num(newprice.toString())
+            price.innerHTML = en_to_fa_num(newprice.toLocaleString())
         })
     }
 
@@ -22,7 +22,7 @@ if (specificIdElement) {
         [...specificIdElement.querySelectorAll('#pricetable_mainbody_by_factory .rate_checked_warning')].forEach(item => item.classList.add('hidden'));
         [...specificIdElement.querySelectorAll("#pricetable_mainbody_by_factory .price .pricenumber")].forEach(price => {
             const pricenum = Number(price.getAttribute('original_price'));
-            price.innerHTML = en_to_fa_num(pricenum.toString())
+            price.innerHTML = en_to_fa_num(pricenum.toLocaleString())
         })
     }
 
@@ -37,6 +37,6 @@ if (specificIdElement) {
     [...specificIdElement.querySelectorAll("#pricetable_mainbody_by_size .price .pricenumber")].forEach(price => {
         const pricenum = Number(price.getAttribute('original_price'));
         const newprice = pricenum + pricenum*the_rate;
-        price.innerHTML = en_to_fa_num(newprice.toString())
+        price.innerHTML = en_to_fa_num(newprice.toLocaleString())
     })
 }
