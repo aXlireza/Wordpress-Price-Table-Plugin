@@ -98,17 +98,19 @@ function display_price_history_meta_box($post) {
 
     // Display a text input for entering the change (read-only)
     echo '<p>Change from latest price</p>';
-    echo '<input type="text" value="'.number_format($change).'" name="price_change" readonly>';
+    $change_value = empty($change) ? '0' : number_format(intval(str_replace(',', '', $change)));
+    echo '<input type="text" value="'. $change_value .'" name="price_change" readonly>';
 
     // Display the current price (read-only)
     echo '<p>Current Price</p>';
-    echo '<input type="text" value="'.number_format($current_price).'" name="current_price" readonly>';
+    $current_price_value = empty($current_price) ? '0' : number_format(intval(str_replace(',', '', $current_price)));
+    echo '<input type="text" value="'. $current_price_value .'" name="current_price" readonly>';
     
     // Display a textarea for managing price history records
     echo '<p>Manage price history entries:</p>';
     echo '<textarea name="price_history_entries" rows="5">';
     if ($results)
-        foreach ($results as $entry) echo esc_textarea(number_format(explode(' - ', $entry->price)[0]).' - '.explode(' - ', $entry->price)[1]) . "\n";
+        foreach ($results as $entry) echo esc_textarea(number_format(intval(explode(' - ', $entry->price)[0])).' - '.explode(' - ', $entry->price)[1]) . "\n";
     echo '</textarea>';
     echo '</br>';
 
