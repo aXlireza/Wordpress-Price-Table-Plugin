@@ -39,7 +39,7 @@ while (have_posts()) : the_post();
 
     $factory_name = wp_get_post_terms($post_id, 'price_table_factory') ? wp_get_post_terms($post_id, 'price_table_factory')[0]->name : '';
     $factory_id = wp_get_post_terms($post_id, 'price_table_factory') ? wp_get_post_terms($post_id, 'price_table_factory')[0]->term_id : '';
-    $your_select_field_value_value = get_post_custom_values("_thickness", $post_id) ? get_post_custom_values("_thickness", $post_id)[0] : '';
+    $your_select_field_value_value = get_post_custom_values("_thickness", $post_id) ? get_post_custom_values("_thickness", $post_id)[0] : get_post_custom_values("_size", $post_id)[0];
     $weight = get_post_custom_values("_weight", $post_id) ? get_post_custom_values("_weight", $post_id)[0] : '';
     $alloy = get_post_custom_values('_alloy', $post_id) ? get_post_custom_values('_alloy', $post_id)[0] : '';
     $unit = get_post_custom_values('_unit', $post_id) ? get_post_custom_values('_unit', $post_id)[0] : '';
@@ -115,10 +115,10 @@ while (have_posts()) : the_post();
         return $content;
     }
     $breadcrumb = custom_breadcrumbs();
-
+    $category_name = $terms[0]->name;
     echo "
     <nav dir='rtl' style='display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 50px;'>
-        <h1 style='margin:0'>$title</h1>    
+        <h1 class='farsi-numbers' style='margin:0'>$title</h1>    
         $breadcrumb
     </nav>
     <div id=\"price_table_options_main\" class=\"single-page\">
@@ -126,22 +126,22 @@ while (have_posts()) : the_post();
             <div class=\"custom-table\">
                 <div class=\"table-row\">
                     <div class=\"table-cell\">
-                        <span class=\"cell-title\">وزن:</span>
-                        <span class=\"cell-value\">$weight</span>
-                    </div>
-                    <div class=\"table-cell\">
-                        <span class=\"cell-title\">سایز:</span>
-                        <span class=\"cell-value\">$your_select_field_value_value</span>
-                    </div>
-                </div>
-                <div class=\"table-row\">
-                    <div class=\"table-cell\">
                         <span class=\"cell-title\">تولید کننده:</span>
                         <a href=\"$term_link\" class=\"cell-value\">$factory_name</a>
                     </div>
                     <div class=\"table-cell\">
                         <span class=\"cell-title\">گروه:</span>
-                        <span class=\"cell-value\">$parent_term_name</span>
+                        <span class=\"cell-value\">$category_name</span>
+                    </div>
+                </div>
+                <div class=\"table-row\">
+                    <div class=\"table-cell\">
+                        <span class=\"cell-title\">وزن:</span>
+                        <span class=\"cell-value farsi-numbers\">$weight</span>
+                    </div>
+                    <div class=\"table-cell\">
+                        <span class=\"cell-title\">سایز:</span>
+                        <span class=\"cell-value farsi-numbers\">$your_select_field_value_value</span>
                     </div>
                 </div>
             </div>
