@@ -34,12 +34,13 @@ function table_row($id, $link, $title, $desc, $size, $weight, $weight_unit, $dat
     $price_history_dates = substr($price_history_dates, 1, strlen($price_history_dates)-2);
     if (strlen($price_history_dates) == 0) $price_history_dates = null;
     $price_history_dates = str_replace("\"", "'", $price_history_dates);
-    $price_history_dates = str_replace(",", "_", $price_history_dates);
+    $price_history_dates = str_replace("','", "_", $price_history_dates);
+    
     $price_history_values = json_encode($price_history[0]);
     $price_history_values = substr($price_history_values, 1, strlen($price_history_values)-2);
     if (strlen($price_history_values) == 0) $price_history_values = null;
     $price_history_values = str_replace("\"", "'", $price_history_values);
-    $price_history_values = str_replace(",", "_", $price_history_values);
+    $price_history_values = str_replace("','", "_", $price_history_values);
 
     $sanitized_price = str_replace(',', '', $price);
 

@@ -72,12 +72,12 @@ while (have_posts()) : the_post();
     $price_history_dates = substr($price_history_dates, 1, strlen($price_history_dates)-2);
     if (strlen($price_history_dates) == 0) $price_history_dates = null;
     $price_history_dates = str_replace("\"", "'", $price_history_dates);
-    $price_history_dates = str_replace(",", "_", $price_history_dates);
+    $price_history_dates = str_replace("','", "_", $price_history_dates);
     $price_history_values = json_encode($chart_price_history[0]);
     $price_history_values = substr($price_history_values, 1, strlen($price_history_values)-2);
     if (strlen($price_history_values) == 0) $price_history_values = null;
     $price_history_values = str_replace("\"", "'", $price_history_values);
-    $price_history_values = str_replace(",", "_", $price_history_values);
+    $price_history_values = str_replace("','", "_", $price_history_values);
 
 
     echo "<div id=\"price_table_options_main\" class=\"single-page\">

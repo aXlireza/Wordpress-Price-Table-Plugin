@@ -8,9 +8,9 @@ if (specificIdElement) {
     if (popupchart_on_pricehistory != null) popupchart_on_pricehistory.destroy()
 
     // reformat the passed parameters to readable data for js
-    prices = prices.replaceAll("'", "").split("_").map(item => Number(item))
+    prices = prices.replaceAll("'", "").split("_").map(item => Number(item.replaceAll(',', '')))
     dates = dates.replaceAll("'", "").split("_")
-
+  
     specificIdElement.querySelector(`#pricetable_pricehistory_${post_id}`).innerHTML = ''
     popupchart_on_pricehistory = new Chart(specificIdElement.querySelector(`#pricetable_pricehistory_${post_id}`), {
       type: 'line',
