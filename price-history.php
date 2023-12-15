@@ -98,17 +98,17 @@ function display_price_history_meta_box($post) {
 
     // Display a text input for entering the change (read-only)
     echo '<p>Change from latest price</p>';
-    echo '<input type="text" value="'.$change.'" name="price_change" readonly>';
+    echo '<input type="text" value="'.number_format($change).'" name="price_change" readonly>';
 
     // Display the current price (read-only)
     echo '<p>Current Price</p>';
-    echo '<input type="text" value="'.$current_price.'" name="current_price" readonly>';
+    echo '<input type="text" value="'.number_format($current_price).'" name="current_price" readonly>';
     
     // Display a textarea for managing price history records
     echo '<p>Manage price history entries:</p>';
     echo '<textarea name="price_history_entries" rows="5">';
     if ($results)
-        foreach ($results as $entry) echo esc_textarea($entry->price) . "\n";
+        foreach ($results as $entry) echo esc_textarea(number_format(explode(' - ', $entry->price)[0]).' - '.explode(' - ', $entry->price)[1]) . "\n";
     echo '</textarea>';
     echo '</br>';
 
@@ -130,11 +130,11 @@ function save_price_history_entries($post_id) {
             update_post_meta($post_id, 'current_price', 0);
         }
         elseif (isset($_POST['price_history_entries'])) {
-            $entries = explode("\n", sanitize_textarea_field($_POST['price_history_entries']));
+            $entries = explode("\n", sanitize_textarea_field(str_replace(',', '', $_POST['price_history_entries'])));
 
             // check if there is a new price value submitted and insert it to the $entries
             if (isset($_POST['new_price']) && !empty($_POST['new_price'])) {
-                $new_price = sanitize_text_field($_POST['new_price']);
+                $new_price = sanitize_text_field(str_replace(',', '', $_POST['new_price']));
                 // add the date to the end of it as well
                 array_unshift($entries, $new_price.' - '.current_time('Y/m/d'));
             }
