@@ -79,8 +79,49 @@ while (have_posts()) : the_post();
     $price_history_values = str_replace("\"", "'", $price_history_values);
     $price_history_values = str_replace("','", "_", $price_history_values);
 
+    $title = get_the_title();
 
-    echo "<div id=\"price_table_options_main\" class=\"single-page\">
+    // Function to display breadcrumbs
+    function custom_breadcrumbs() {
+        $content = '';
+        // Define breadcrumb separator
+        $separator = ' &gt; '; // You can change the separator here
+        
+        // Get the queried object
+        $queried_obj = get_queried_object();
+        
+        // Start the breadcrumbs output
+        $content .= '<div class="breadcrumbs" dir="rtl">';
+        
+        // Home link
+        $content .= '<a href="' . esc_url(home_url('/')) . '"> خانه </a>' . $separator;
+        
+        // Get the category of the single post
+        $category = wp_get_post_terms($queried_obj->ID, 'price_table_category'); //get_the_category();
+        $factory = wp_get_post_terms($queried_obj->ID, 'price_table_factory'); //get_the_category();
+        if ($category) {
+            $category_id = $category[0]->term_id;
+            $content .= '<a href="' . esc_url(get_term_link($category_id)) . '">' . $category[0]->name . '</a>' . $separator;
+        }
+        if ($factory) {
+            $category_id = $factory[0]->term_id;
+            $content .= '<a href="' . esc_url(get_term_link($category_id)) . '">' . $factory[0]->name . '</a>' . $separator;
+        }
+        // Display current post title
+        $content .= '<span class="current">' . get_the_title() . '</span>';
+        
+        // Close breadcrumbs div
+        $content .= '</div>';
+        return $content;
+    }
+    $breadcrumb = custom_breadcrumbs();
+
+    echo "
+    <nav dir='rtl' style='display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 50px;'>
+        <h1 style='margin:0'>$title</h1>    
+        $breadcrumb
+    </nav>
+    <div id=\"price_table_options_main\" class=\"single-page\">
         <section id=\"first_row_singlepage\">
             <div class=\"custom-table\">
                 <div class=\"table-row\">
