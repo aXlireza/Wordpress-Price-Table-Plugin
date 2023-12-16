@@ -186,13 +186,13 @@ if (specificIdElement) {
 			
 			function initializeTagsFromQueryParams() {
 				const queryParams = getQueryParams();
-				if (container_tagname == 'size_tags' && queryParams.size_tags) {
+				if (container_tagname == 'size_tags' && queryParams.size_tags && queryParams.size_tags.length > 0 && queryParams.size_tags[0] != '') {
 					queryParams.size_tags.forEach(tagId => {
 						const size_tags = filter_data_tags['size_tags'].find(t => t.id === Number(tagId))
 						if (size_tags) selectTag(size_tags, false)
 					});
 				}
-				if (container_tagname == 'factory_tags' && queryParams.factory_tags) {
+				if (container_tagname == 'factory_tags' && queryParams.factory_tags && queryParams.factory_tags.length > 0 && queryParams.factory_tags[0] != '') {
 					queryParams.factory_tags.forEach(tagId => {
 						const factory_tags = filter_data_tags['factory_tags'].find(t => t.id === Number(tagId))
 						if (factory_tags) selectTag(factory_tags, false)
