@@ -117,7 +117,7 @@ while (have_posts()) : the_post();
     $breadcrumb = custom_breadcrumbs();
     $category_name = $terms[0]->name;
     echo "
-    <nav dir='rtl' style='display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 50px;'>
+    <nav dir='rtl' style='display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 20px;'>
         <h1 class='farsi-numbers' style='margin:0'>$title</h1>    
         $breadcrumb
     </nav>
@@ -155,12 +155,14 @@ while (have_posts()) : the_post();
                         <span>نوسان (تومان)</span>
                     </div>";
                     foreach ($price_history as $record) {
-                        $change_sign = strval($record[2])[0] == '-' ? 'down' : 'up';
-                        echo "<div class=\"card-content\">
-                            <div class=\"date farsi-numbers\">$record[1]</div>
-                            <div class=\"price farsi-numbers \">$record[0]</div>
-                            <div dir='ltr' class=\"$change_sign amount farsi-numbers\">$record[2]</div>
-                        </div>";
+                        if (count($record) == 3) {
+                            $change_sign = strval($record[2])[0] == '-' ? 'down' : 'up';
+                            echo "<div class=\"card-content\">
+                                <div class=\"date farsi-numbers\">$record[1]</div>
+                                <div class=\"price farsi-numbers \">$record[0]</div>
+                                <div dir='ltr' class=\"$change_sign amount farsi-numbers\">$record[2]</div>
+                            </div>";
+                        }
                     }
                 echo "</div>
                 <!-- Repeat the .card block for other entries -->
