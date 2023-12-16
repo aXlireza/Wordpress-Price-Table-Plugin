@@ -23,7 +23,7 @@ function enqueue_custom_scripts() {
   wp_enqueue_script('pricetable-html2canvas', 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js', array(), '1.3.2', true);
   wp_enqueue_script('pricetable-table-shot', plugin_dir_url(__FILE__) . 'assets/js/table-shot.js', array(), '1.0', true);
   wp_enqueue_script('pricetable-chart-js', plugin_dir_url(__FILE__) . 'assets/js/chart.js', array(), '1.0', true);
-  wp_enqueue_script('pricetable-sidebar', plugin_dir_url(__FILE__) . 'assets/js/sidebar.js', array(), '1.0', true);
+  wp_enqueue_script('pricetable-sidebar', plugin_dir_url(__FILE__) . 'assets/js/sidebar.js', array(), '1.1', true);
   wp_enqueue_script('pricetable-table-info', plugin_dir_url(__FILE__) . 'assets/js/table-info.js', array(), '1.0', true);
   wp_enqueue_script('pricetable-table-rate', plugin_dir_url(__FILE__) . 'assets/js/rate.js', array(), '1.0', true);
   wp_enqueue_script('pricetable-home-table', plugin_dir_url(__FILE__) . 'assets/js/home.js', array(), '1.0', true);
