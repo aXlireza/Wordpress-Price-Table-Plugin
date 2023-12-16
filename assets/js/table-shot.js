@@ -9,7 +9,7 @@ if (specificIdElement) {
                     var img = canvas.toDataURL('image/png');
 
                     // Create a link to download the image
-                    var downloadLink = specificIdElement.createElement('a');
+                    var downloadLink = document.createElement('a');
                     downloadLink.href = img;
                     downloadLink.download = 'captured-image.png';
 
