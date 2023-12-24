@@ -44,12 +44,14 @@ function table_row($id, $link, $title, $desc, $size, $weight, $weight_unit, $dat
 
     $sanitized_price = str_replace(',', '', $price);
 
+    $weight_template = $weight ? "<span class=\"weight farsi-numbers\">$weight</span><span class=\"unit\">$weight_unit</span>" : '';
+
     echo "<div class=\"info_row_container $class\" id=\"$customid\">
         <div id=\"$id\" class=\"info-row rtl\">
             <div class=\"row-size farsi-numbers\">$size</div>
             <div class=\"stock-title\">
                 <a href=\"$link\" class=\"title-main farsi-numbers\">$title</a>
-                <span class=\"title-sub\">$desc<span class=\"weight farsi-numbers\">$weight</span><span class=\"unit\">$weight_unit</span></span>
+                <span class=\"title-sub\">$desc $weight_template</span>
             </div>
             <div class=\"price-information $change_sign_class_name\">
                 <div class=\"status-box\">
