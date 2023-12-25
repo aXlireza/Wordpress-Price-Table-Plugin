@@ -224,7 +224,6 @@ function display_row($post_id, $your_select_field_value, $class, $customid) {
     elseif (substr($price_change, 0, 1) == '0') $change_sign = '';
     elseif (substr($price_change, 0, 1) == '-') $change_sign = '-';
     else $change_sign = '+';
-
     table_row(
         $post_id,
         get_the_permalink($post_id),// $link,
@@ -239,6 +238,7 @@ function display_row($post_id, $your_select_field_value, $class, $customid) {
         $change_sign,
         $price_change,// $changes
         $price_history,
+        // TODO: Update the tel number to a real one
         '123456',
         $class,
         $factory_id,

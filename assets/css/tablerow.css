@@ -6,16 +6,29 @@
 
 #price_table_options_main .info-container {margin: 10px}
 
-#price_table_options_main .info-row {
-  display: grid;
-  grid-template-columns: .4fr 2fr 1fr 1fr auto min-content;
-  align-items: center;
-  /* gap: 10px; */
-  /* padding: 10px; */
-  border-radius: 5px;
-  background-color: #f9f9f9; /* Default background color */
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  width: 100%; /* Stretch to fit the container */
+#price_table_options_main .info-row {width: 100%}
+
+#price_table_options_main .info-row .subrow {
+	display: grid;
+	align-items: center;
+	border-radius: 5px;
+	background-color: #f9f9f9;
+	transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#price_table_options_main .info-row .info-row-desktop { grid-template-columns: .4fr 2fr 1fr 1fr auto min-content }
+
+/* mobile mode */
+#price_table_options_main .info-row .info-row-mobile { display: none; grid-template-columns: .1fr .2fr .2fr .2fr .2fr .1fr }
+#price_table_options_main .info-row .info-row-mobile .col { justify-content: center }
+#price_table_options_main .info-row .info-row-mobile .unit {display: none;}
+#price_table_options_main .info-row .info-row-mobile .text {font-size: 1rem;}
+
+/* Mobile Mode Activation */
+@media (max-width: 768px) {
+	#price_table_options_main .info-row .info-row-desktop {display: none!important;}
+	#price_table_options_main .info-row .info-row-mobile {display: grid!important;}
+	#price_table_options_main .info-row:hover {transform: none!important;}
 }
 
 #price_table_options_main .row-size {
@@ -40,10 +53,19 @@
 }
 
 #price_table_options_main .stock-title .title-sub .weight {
-	display: block;
+	display: flex;
+	flex-flow: row;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	align-items: center;
 	color: #15a1ed;
 	font-size: 0.8em;
 	margin: 0 2px;
+}
+
+#price_table_options_main .info-row-mobile .weight {
+	display: flex;
+	justify-content: center;
 }
 
 #price_table_options_main .stock-title .title-sub .unit {
@@ -75,6 +97,7 @@
 	margin-left: 10px;
 }
 
+#price_table_options_main .info-row-mobile .status-box {margin-left: 0; padding: 0;}
 /* Phone Condition */
 #price_table_options_main .phonecall {
 	width: fit-content;
@@ -94,24 +117,20 @@
 }
 
 /* when the change rate is positive */
-#price_table_options_main .price-information.up .status-box {background-color: #4CAF50}
-#price_table_options_main .price-information.up .phonecall {display: none!important}
-#price_table_options_main .price-information.up .status-box .arrow-icon::before {content: "\f35b"}
+#price_table_options_main .info-row .info-row-desktop .price-information .status-box.up {background-color: #4CAF50}
+#price_table_options_main .info-row .info-row-mobile .price-information .status-box.up {color: #4CAF50}
+#price_table_options_main .info-row .price-information .status-box.up .arrow-icon::before {content: "\f35b"}
 
 /* when the change rate is negative */
-#price_table_options_main .price-information.down .status-box {background-color: #F44336}
-#price_table_options_main .price-information.down .phonecall {display: none!important}
-#price_table_options_main .price-information.down .status-box .arrow-icon::before {content: "\f358"}
-#price_table_options_main .price-information.down .status-box .status-number {direction: ltr}
+#price_table_options_main .info-row .info-row-desktop .price-information .status-box.down {background-color: #F44336}
+#price_table_options_main .info-row .info-row-mobile .price-information .status-box.down {color: #F44336}
+#price_table_options_main .info-row .price-information .status-box.down .arrow-icon::before {content: "\f358"}
+#price_table_options_main .info-row .price-information .status-box.down .status-number {direction: ltr}
 
 /* when it's on neutral */
-#price_table_options_main .price-information.neutral .status-box {background-color: #858585}
-#price_table_options_main .price-information.neutral .phonecall {display: none!important}
-#price_table_options_main .price-information.neutral .status-box .arrow-icon::before {content: "\f111"}
-
-/* when the change rate is is to "call" mode */
-#price_table_options_main .price-information.phone .status-box, .price-information.phone .price {display: none!important}
-
+#price_table_options_main .info-row .info-row-desktop .price-information .status-box.neutral {background-color: #858585}
+#price_table_options_main .info-row .info-row-mobile .price-information .status-box.neutral {color: #5e5e5e}
+#price_table_options_main .info-row .price-information .status-box.neutral .arrow-icon::before {content: "\f111"}
 
 
 #price_table_options_main .arrow-icon::before {
@@ -133,9 +152,7 @@
 	font-weight: 200;
 }
 
-#price_table_options_main .price.phonecall {
-	display: none;
-}
+/* #price_table_options_main .price.phonecall {display: none} */
 
 #price_table_options_main .date-tag {
 	display: flex;
@@ -211,28 +228,83 @@ display: block;
 	margin-right: 5px;
 }
 
+#price_table_options_main .info-row-mobile .description-label {
+	font-weight: 600;
+	transform: rotate(0deg)!important;
+	writing-mode: horizontal-tb;
+	width: fit-content;
+	flex-direction: column;
+	height: fit-content;
+	background-color: #2196F3; /* Blue background for the last column */
+	color: #fff;
+}
+
 /* Hover effects */
 #price_table_options_main .info-row:hover {
   background-color: #f0f0f0; /* Light grey background */
   transform: translateX(10px); /* Slight move to the right */
 }
-
-#price_table_options_main .info-row:hover .description-label {
-  background-color: #2196F3; /* Blue background for the last column */
-  color: #fff;
-  padding: 5px; /* Add padding to the label */
-  border-radius: 5px; /* Optional: add border-radius to the label */
+@media (min-width: 769px) {
+	#price_table_options_main .info-row:hover .description-label {
+		background-color: #2196F3; /* Blue background for the last column */
+		color: #fff;
+		padding: 5px; /* Add padding to the label */
+		border-radius: 5px; /* Optional: add border-radius to the label */
+	}
 }
 
 @media (max-width: 768px) {
-#price_table_options_main .info-row {
+#price_table_options_main .info-row .info-row-desktop {
 	grid-template-columns: auto auto auto min-content;
     /* gap: 5px; */
   }
 	
-  #price_table_options_main .date-tag,
-  #price_table_options_main .action-buttons {display: none}
+  #price_table_options_main .date-tag {display: none}
 
   #price_table_options_main .stock-title .title-sub,
   #price_table_options_main .date-tag .tag {font-size: 0.7em}
+}
+
+
+
+/* Accordion */
+#price_table_options_main .moredetails.accordion-button {
+	color: #444;
+	cursor: pointer;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 15px;
+	transition: 0.4s;
+	background-color: #f9f9f9;
+	width: fit-content;
+	margin: 0 auto;
+}
+
+#price_table_options_main .moredetails.accordion-button:after {
+	content: '\f358';
+	color: #fff;
+	border-radius: 100%;
+	background-color: rgb(0, 84, 194);
+}
+
+#price_table_options_main .moredetails.accordion-button.active:after {
+	background-color: gray;
+	color: rgb(0, 84, 194);
+	border-radius: 100%;
+}
+
+#price_table_options_main .moredetails.accordion-content > div {
+	padding: 18px;
+	display: flex;
+	justify-content: space-between;
+}
+
+#price_table_options_main .moredetails.accordion-content {
+	display: none;
+	overflow: hidden;
+	background-color: #f1f1f1;
+	grid-row: 2;
+	grid-column: 1/7;
+	width: 100%;
 }

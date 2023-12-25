@@ -5,6 +5,22 @@
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+@media (max-width: 768px) {
+	/* #price_table_options_main #tablefiltersidebar, #price_table_options_main .tag-input-container, #price_table_options_main .tag-input {width: 100%!important} */
+	#price_table_options_main #tablefiltersidebar, #price_table_options_main .tag-input-container {width: 100%!important}
+	#price_table_options_main #tablefiltersidebar {padding: 0!important;}
+	#price_table_options_main #tablefiltersidebar .button-group {
+    padding: 0 40px!important;
+	}
+	#price_table_options_main .tag-input {
+    width: 80%!important;
+	}
+	#price_table_options_main .tag-input-container {
+    justify-content: center;
+    margin: 10px 0;
+		align-items: center;
+	}
+}
 
 #price_table_options_main #tablefiltersidebar .sidebar-header h2 {
 	margin-bottom: 15px;
@@ -66,12 +82,6 @@
 
 
 
-
-#price_table_options_main .tag-input-container {
-	position: relative;
-	width: 300px;
-}
-
 #price_table_options_main .tag-input {
 	width: max-content;
 	padding: 10px;
@@ -113,4 +123,7 @@
 #price_table_options_main .tag-input-container {
   position: relative;
   width: 300px;
+	display: flex;
+	flex-direction: column-reverse;
+	gap: 10px;
 }

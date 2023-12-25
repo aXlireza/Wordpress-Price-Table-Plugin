@@ -14,6 +14,12 @@
 	font-weight: 600;
 }
 
+@media (max-width: 768px) {
+	#price_table_options_main .table_info > a {
+		font-size: 0.9rem;
+	}
+}
+
 #price_table_options_main .table_info .custom-select {
 	color: white;
   border: none;

@@ -22,6 +22,14 @@ body #price_table_options_main {
 	padding: 0;
 	width: 100%;
 }
+#price_table_options_main .nav-menu.mobile {display: none; grid-template-columns: .1fr .2fr .2fr .2fr .2fr .1fr ;}
+#price_table_options_main .nav-menu.mobile .nav-item {text-align: center; font-size: .8rem;}
+
+@media (max-width: 768px) {
+	#price_table_options_main .nav-menu.desktop {display: none;}
+	#price_table_options_main .nav-menu.mobile {display: grid;}
+}
+
 
 #price_table_options_main .nav-link {
 	text-decoration: none;
@@ -41,14 +49,4 @@ body #price_table_options_main {
 
 #price_table_options_main .nav-button:hover {
 	background-color: #003d82; /* Darker background on hover */
-}
-
-@media (max-width: 768px) {
-  #price_table_options_main .navbar .nav-menu {
-    grid-template-columns: .1fr auto auto;
-  }
-
-	#price_table_options_main .navbar .nav-menu .nav-item.item-date,
-	#price_table_options_main .navbar .nav-menu .nav-item.item-btns
-	{display: none}
 }
