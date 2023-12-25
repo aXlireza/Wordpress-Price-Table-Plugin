@@ -238,8 +238,7 @@ function display_row($post_id, $your_select_field_value, $class, $customid) {
         $change_sign,
         $price_change,// $changes
         $price_history,
-        // TODO: Update the tel number to a real one
-        '123456',
+        get_theme_mod('price_table_phonecall_tel'),
         $class,
         $factory_id,
     );
