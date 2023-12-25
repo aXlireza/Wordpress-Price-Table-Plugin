@@ -8,13 +8,12 @@ function table_info($title, $id, $link, $list, $category_name) {
         $select_html .= "<option value=\"$value\" >$name</option>";
     }
     echo "<section id=\"$id\" class=\"table_info rtl\">
-        <a href=\"$link\">قیمت $category_name $title</a>
+        <a href=\"$link\">قیمت $title</a>
         <p class=\"rate_checked_warning hidden\">قیمت های درج شده با احتساب %۹ ارزش افـــزوده مـــی بــاشـــد.</p>
         <div class=\"custom-select-wrapper\">
             <select onchange=\"table_info_select('#$id', this.value)\" class=\"custom-select\">
                 <option value=\"0\">انتخاب کارخانه</option>
                 $select_html
-                <!-- More options here -->
             </select>
         </div>
     </section>";
