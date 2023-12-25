@@ -34,50 +34,61 @@ if (empty($your_select_field_value_fa)) {
     $your_select_field_value_fa = "اندازه";
 }
 
-// Query posts from price_table post type sorted by price_table_factory taxonomy
-$args = array(
-    'post_type' => 'price_table',
-    'tax_query' => array(
-        array(
-            'taxonomy' => $current_category->taxonomy,//'price_table_category', // Replace with your category taxonomy name
-            'field' => 'slug',
-            'terms' => $current_category->slug,
+
+$transient_name = 'price_table'.$current_category->term_id.$current_category->taxonomy;
+$factory_posts_transient = get_transient($transient_name);
+
+if ($factory_posts_transient) {
+    $factory_posts = $factory_posts_transient;
+} else {
+    // Query posts from price_table post type sorted by price_table_factory taxonomy
+    $args = array(
+        'post_type' => 'price_table',
+        'tax_query' => array(
+            array(
+                'taxonomy' => $current_category->taxonomy,//'price_table_category', // Replace with your category taxonomy name
+                'field' => 'slug',
+                'terms' => $current_category->slug,
+            ),
         ),
-    ),
-    'posts_per_page' => -1, // Display all posts from the category
-    'orderby' => 'price_table_factory', // Sort by price_table_factory taxonomy
-    'order' => 'ASC', // Change to 'DESC' for descending order
-);
+        'posts_per_page' => -1, // Display all posts from the category
+        'orderby' => 'price_table_factory', // Sort by price_table_factory taxonomy
+        'order' => 'ASC', // Change to 'DESC' for descending order
+    );
 
-$posts_query = new WP_Query($args);
+    $posts_query = new WP_Query($args);
 
-if ($posts_query->have_posts()) {
-    $factory_posts = []; // Initialize array to hold posts grouped by factory
+    if ($posts_query->have_posts()) {
+        $factory_posts = []; // Initialize array to hold posts grouped by factory
 
-    while ($posts_query->have_posts()) {
-        $posts_query->the_post();
-        $factory = get_the_terms(get_the_ID(), 'price_table_factory'); // Get factory term(s)
+        while ($posts_query->have_posts()) {
+            $posts_query->the_post();
+            $factory = get_the_terms(get_the_ID(), 'price_table_factory'); // Get factory term(s)
 
 
-        if ($factory && isset($factory[0])) {
-            $factory_name = $factory[0]->name;
-            $factory_link = get_term_link(get_term($factory[0]->term_id, 'price_table_factory'));
-            $factory_id = $factory[0]->term_id;
+            if ($factory && isset($factory[0])) {
+                $factory_name = $factory[0]->name;
+                $factory_link = get_term_link(get_term($factory[0]->term_id, 'price_table_factory'));
+                $factory_id = $factory[0]->term_id;
 
-            // Check if the factory key exists in the array, if not, create it
-            if (!isset($factory_posts[$factory_name])) {
-                $factory_posts[$factory_name] = [];
+                // Check if the factory key exists in the array, if not, create it
+                if (!isset($factory_posts[$factory_name])) {
+                    $factory_posts[$factory_name] = [];
+                }
+
+                // Add the post to the respective factory key in the array
+                $factory_posts[$factory_name]['id'] = $factory_id;
+                $factory_posts[$factory_name]['title'] = $factory_name;
+                $factory_posts[$factory_name]['link'] = $factory_link;
+                $factory_posts[$factory_name]['posts'][] = get_post();
             }
-
-            // Add the post to the respective factory key in the array
-            $factory_posts[$factory_name]['id'] = $factory_id;
-            $factory_posts[$factory_name]['title'] = $factory_name;
-            $factory_posts[$factory_name]['link'] = $factory_link;
-            $factory_posts[$factory_name]['posts'][] = get_post();
         }
+        wp_reset_postdata();
+        set_transient($transient_name, $factory_posts, 60*60*24);
     }
-    wp_reset_postdata();
+}
 
+if (!empty($factory_posts)) {
     // Get all subcategories of the current category or its parent category
     $subcategories = get_terms(array(
         'taxonomy' => 'price_table_category', // Replace with your category taxonomy name
@@ -90,7 +101,6 @@ if ($posts_query->have_posts()) {
     foreach ($subcategories as $subcategory) {
         // Retrieve thumbnail source for the current subcategory
         $thumbnail_src = get_term_meta($subcategory->term_id, 'category_thumbnail_src', true);
-
         // Store subcategory information in an array
         $subcategory_info = [
             'id' => $subcategory->term_id,
@@ -98,31 +108,31 @@ if ($posts_query->have_posts()) {
             'link' => get_term_link($subcategory), // Get the link to the subcategory
             'thumbnail_src' => $thumbnail_src, // Thumbnail source for the subcategory
         ];
-
         // Add the subcategory info to the subcategories array
         $subcategories_array[] = $subcategory_info;
     }
-	echo "<section id=\"price_table_options_main\">";
 
     // Initialize an array to store sizes and their corresponding posts
     $sizes_list = [];
-
     foreach ($factory_posts as $factory_name => $factory_posts_array) {
         foreach ($factory_posts_array['posts'] as $post) {
             // Get the size for the current post
             $size = get_post_custom_values("_thickness", $post->ID) ? get_post_custom_values("_thickness", $post->ID)[0] : '';
-
             // Check if the size already exists in the sizes_list array
             if (!array_key_exists($size, $sizes_list)) {
                 $sizes_list[$size] = [];
             }
-
             // Add the post ID (or any other post data you need) to the array for this size
             $sizes_list[$size][] = $post->ID; // You can store $post instead of $post->ID if you need the full post object
         }
     }
+}
 
 
+if (!empty($factory_posts)) {
+
+
+	echo "<section id=\"price_table_options_main\">";
   	table_sidebar($factory_posts, array_keys($sizes_list), $your_select_field_value_fa);
 
 
