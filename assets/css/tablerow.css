@@ -19,7 +19,7 @@
 #price_table_options_main .info-row .info-row-desktop { grid-template-columns: .4fr 2fr 1fr 1fr auto min-content }
 
 /* mobile mode */
-#price_table_options_main .info-row .info-row-mobile { display: none; grid-template-columns: .1fr .2fr .2fr .2fr .2fr .1fr }
+#price_table_options_main .info-row .info-row-mobile { display: none; grid-template-columns: .1fr .2fr .2fr .2fr .3fr .1fr }
 #price_table_options_main .info-row .info-row-mobile .col { justify-content: center }
 #price_table_options_main .info-row .info-row-mobile .unit {display: none;}
 #price_table_options_main .info-row .info-row-mobile .text {font-size: 1rem;}
