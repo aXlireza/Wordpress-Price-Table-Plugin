@@ -22,7 +22,7 @@ body #price_table_options_main {
 	padding: 0;
 	width: 100%;
 }
-#price_table_options_main .nav-menu.mobile {display: none; grid-template-columns: .1fr .2fr .2fr .2fr .3fr .1fr ;}
+#price_table_options_main .nav-menu.mobile {display: none; grid-template-columns: .2fr .2fr .2fr .2fr .2fr .1fr ;}
 #price_table_options_main .nav-menu.mobile .nav-item {text-align: center; font-size: .8rem;}
 
 @media (max-width: 768px) {
