@@ -153,10 +153,10 @@ function display_lowest_price_posts() {
                             </div>
                         </div>
 
-                        <a href=\"$link\" class=\"description-label\">توضیحات</a>
+                        <a href=\"$link\" class=\"hideonmobile description-label\">توضیحات</a>
                         
-                        <button class='moredetails accordion-button fa-icon'></button>
-                        <div class='moredetails accordion-content'>
+                        <button class='hideondesktop moredetails accordion-button fa-icon'></button>
+                        <div class='hideondesktop moredetails accordion-content'>
                             <div>
                                 <ul style='margin: 0;'>
                                     <li>$factory_name</li>

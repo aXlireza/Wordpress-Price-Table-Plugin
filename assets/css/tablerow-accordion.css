@@ -1,15 +1,3 @@
-@media (min-width: 769px) {
-  #price_table_options_main .moredetails, #homepage-table-price .moredetails {
-    display: none;
-  }
-}
-
-@media (max-width: 768px) {
-  #price_table_options_main .description-label, #homepage-table-price .description-label {
-    display: none;
-  }
-}
-
 #price_table_options_main .moredetails.accordion-button, #homepage-table-price .moredetails.accordion-button {
 	color: #444;
 	cursor: pointer;

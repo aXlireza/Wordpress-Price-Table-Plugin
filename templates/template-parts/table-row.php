@@ -92,7 +92,7 @@ function table_row($id, $link, $title, $desc, $size, $weight, $weight_unit, $dat
                 <div class=\"action-buttons\">
                     $chartbtn_template
                 </div>
-                <a href=\"$link\" class=\"description-label\">توضیحات</a>
+                <a href=\"$link\" class=\"hideonmobile description-label\">توضیحات</a>
             </article>
 
             <article class='info-row-mobile subrow'>
