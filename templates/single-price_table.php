@@ -39,7 +39,10 @@ while (have_posts()) : the_post();
 
     $factory_name = wp_get_post_terms($post_id, 'price_table_factory') ? wp_get_post_terms($post_id, 'price_table_factory')[0]->name : '';
     $factory_id = wp_get_post_terms($post_id, 'price_table_factory') ? wp_get_post_terms($post_id, 'price_table_factory')[0]->term_id : '';
-    $your_select_field_value_value = get_post_custom_values("_thickness", $post_id) ? get_post_custom_values("_thickness", $post_id)[0] : get_post_custom_values("_size", $post_id)[0];
+    $sizeValue = get_post_custom_values("_size", $post_id)[0] ?? null;
+    $thicknessValue = get_post_custom_values("_thickness", $post_id)[0] ?? '';
+    
+    $your_select_field_value_value = $sizeValue ?? $thicknessValue;
     $weight = get_post_custom_values("_weight", $post_id) ? get_post_custom_values("_weight", $post_id)[0] : '';
     $alloy = get_post_custom_values('_alloy', $post_id) ? get_post_custom_values('_alloy', $post_id)[0] : '';
     $unit = get_post_custom_values('_unit', $post_id) ? get_post_custom_values('_unit', $post_id)[0] : '';
@@ -71,12 +74,12 @@ while (have_posts()) : the_post();
     $price_history_dates = json_encode($chart_price_history[1]);
     $price_history_dates = substr($price_history_dates, 1, strlen($price_history_dates)-2);
     if (strlen($price_history_dates) == 0) $price_history_dates = null;
-    $price_history_dates = str_replace("\"", "'", $price_history_dates);
+    $price_history_dates = str_replace("\"", "'", $price_history_dates ?? '');
     $price_history_dates = str_replace("','", "_", $price_history_dates);
     $price_history_values = json_encode($chart_price_history[0]);
     $price_history_values = substr($price_history_values, 1, strlen($price_history_values)-2);
     if (strlen($price_history_values) == 0) $price_history_values = null;
-    $price_history_values = str_replace("\"", "'", $price_history_values);
+    $price_history_values = str_replace("\"", "'", $price_history_values ?? '');
     $price_history_values = str_replace("','", "_", $price_history_values);
 
     $title = get_the_title();

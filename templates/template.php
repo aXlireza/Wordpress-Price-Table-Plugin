@@ -133,16 +133,16 @@ if (empty($your_select_field_value_fa)) {
     }
 
 
-    $content = '';
+    // $content = '';
     if (!empty($factory_posts)) {
 
 
-        $content .= "<section id=\"price_table_options_main\">";
+        echo  "<section id=\"price_table_options_main\">";
         table_sidebar($factory_posts, array_keys($sizes_list), $your_select_field_value_fa);
 
 
         // ########## tables based on Factories
-        $content .= "<section id=\"pricetable_mainbody_by_factory\">";
+        echo  "<section id=\"pricetable_mainbody_by_factory\">";
         price_cat_list($subcategories_array);
         table_rate();
 
@@ -150,8 +150,8 @@ if (empty($your_select_field_value_fa)) {
         foreach ($factory_posts as $factory_name => $factory_posts_array) {
             $factory_id = $factory_posts_array['id'];
             $screenshot_target_id = "element-to-capture$factory_id";
-            $content .= "<div id=\"$screenshot_target_id\">";
-            $content .= "<section class=\"factory_table\" id=\"$factory_id\">";
+            echo  "<div id=\"$screenshot_target_id\">";
+            echo  "<section class=\"factory_table\" id=\"$factory_id\">";
             // Display factory title
             $factory_id = 'factory_posts'.$factory_posts[$factory_name]['id'];
             $factory_list = [];
@@ -161,19 +161,19 @@ if (empty($your_select_field_value_fa)) {
             table_head($your_select_field_value_fa, $screenshot_target_id);
 
             // Output or process posts for each factory
-            $content .= '<div class="allrows">';
+            echo  '<div class="allrows">';
             foreach ($factory_posts_array['posts'] as $post)
                 display_row($post->ID, $your_select_field_value, '', '');
-            $content .= "</div>";
-            $content .= "</section>";
-            $content .= "</div>";
+            echo  "</div>";
+            echo  "</section>";
+            echo  "</div>";
         }
-        $content .= "</section>";
+        echo  "</section>";
         
 
 
         // ########## tables based on Sizes
-        $content .= "<section id=\"pricetable_mainbody_by_size\" class=\"hidden\">";
+        echo  "<section id=\"pricetable_mainbody_by_size\" class=\"hidden\">";
         price_cat_list($subcategories_array);
         table_rate_by_size();
 
@@ -181,24 +181,24 @@ if (empty($your_select_field_value_fa)) {
         // foreach ($factory_posts as $factory_name => $factory_posts_array) {
         foreach ($sizes_list as $thesize => $posts_ids) {
             $size_id = 'size'.str_replace('.', '_', $thesize);
-            $content .= "<section class=\"size_table info_row_container\" id=\"$size_id\">";
+            echo  "<section class=\"size_table info_row_container\" id=\"$size_id\">";
             table_info_by_size($your_select_field_value_fa, $size_id, array_keys($sizes_list), $thesize);
             table_head_by_size($your_select_field_value_fa);
 
             // Output or process posts for each factory
-            $content .= '<div class="allrows">';
+            echo  '<div class="allrows">';
             foreach ($posts_ids as $post_id)
                 display_row($post_id, $your_select_field_value, 'factory_table', '');
-            $content .= "</div>";
-            $content .= "</section>";
+            echo  "</div>";
+            echo  "</section>";
         }
-        $content .= "</section>";
+        echo  "</section>";
 
 
 
-        $content .= "</section>";
+        echo  "</section>";
         // set_transicent($transient_name_html, $content, 60*60*24);
-        echo $content;
+        // echo $content;
     } else {
         echo '<p>No posts found.</p>';
     }
@@ -208,7 +208,11 @@ if (empty($your_select_field_value_fa)) {
 function display_row($post_id, $your_select_field_value, $class, $customid) {
     $factory_name = wp_get_post_terms($post_id, 'price_table_factory')[0]->name;
     $factory_id = wp_get_post_terms($post_id, 'price_table_factory')[0]->term_id;
-    $your_select_field_value_value = get_post_custom_values("_size", $post_id) ? get_post_custom_values("_size", $post_id)[0] : get_post_custom_values("_thickness", $post_id)[0];
+    
+    $sizeValue = get_post_custom_values("_size", $post_id)[0] ?? null;
+    $thicknessValue = get_post_custom_values("_thickness", $post_id)[0] ?? '';
+    
+    $your_select_field_value_value = $sizeValue ?? $thicknessValue;
     $alloy = get_post_custom_values('_alloy', $post_id) ? get_post_custom_values('_alloy', $post_id)[0] : '';
     $weight = get_post_custom_values('_weight', $post_id) ? get_post_custom_values('_weight', $post_id)[0] : '';
     $unit = get_post_custom_values('_unit', $post_id) ? get_post_custom_values('_unit', $post_id)[0] : 'کیلوگرم';
