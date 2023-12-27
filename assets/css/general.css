@@ -24,3 +24,9 @@
     #price_table_options_main .factory_table { padding: 0 15px }
 }
 
+@media (max-width: 768px) {
+    .hideonmobile {display: none!important}
+}
+@media (min-width: 769px) {
+    .hideondesktop {display: none!important}
+}

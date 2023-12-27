@@ -14,7 +14,6 @@
 
 #homepage-table-price .info-row {
   display: grid;
-  grid-template-columns: .7fr .1fr .5fr .4fr .7fr .3fr;
   align-items: center;
   /* gap: 10px; */
   /* padding: 10px; */
@@ -24,6 +23,9 @@
   width: 100%; /* Stretch to fit the container */
   direction: rtl;
 }
+
+#homepage-table-price .info-row,
+	#homepage-table-price .table-header { grid-template-columns: .7fr .2fr .5fr .4fr .7fr .3fr }
 
 #homepage-table-price .row-size {
   	text-align: center;
@@ -114,6 +116,15 @@
 #homepage-table-price .price-information.neutral .phonecall {display: none!important}
 #homepage-table-price .price-information.neutral .status-box .arrow-icon::before {content: "\f111"}
 
+@media (max-width: 768px) {
+	#homepage-table-price .price-information.neutral .status-box { color: #858585; background-color: unset!important }
+	#homepage-table-price .price-information.down .status-box { color: #F44336; background-color: unset!important }
+	#homepage-table-price .price-information.up .status-box { color: #4CAF50; background-color: unset!important }
+	#homepage-table-price .status-box {width: unset; height: unset; padding: unset;}
+}
+
+
+
 /* when the change rate is is to "call" mode */
 #homepage-table-price .price-information.phone .status-box, .price-information.phone .price {display: none!important}
 
@@ -166,40 +177,6 @@ display: block;
 	border-radius: 2px;
 }
 
-#homepage-table-price .action-buttons .chart-btn,
-#homepage-table-price .action-buttons .like-btn {
-	background: none;
-	border: 1px solid #ddd;
-	border-radius: 50%;
-	padding: 5px 10px;
-	margin-right: 5px;
-	cursor: pointer;
-	aspect-ratio: 1 / 1;
-}
-
-#homepage-table-price .action-buttons .chart-btn::before {
-	content: "\f080";
-	color: red; /* Or your chosen heart color */
-}
-
-#homepage-table-price .action-buttons .like-btn::before {
-	content: "\f004";
-	color: red; /* Or your chosen heart color */
-}
-#homepage-table-price .action-buttons {
-	display: flex;
-	flex-wrap: nowrap;
-	flex-direction: row;
-	align-content: center;
-	align-items: center;
-}
-#homepage-table-price .action-buttons .chart-btn pre {
-	margin: 0;
-	font-family: 'IranYekanWebRegular';
-	font-size: 10px;
-	color: #78909C;
-}
-
 #homepage-table-price .description-label {
 	/* writing-mode: vertical-lr;
 	transform: rotate(180deg); */
@@ -229,23 +206,9 @@ display: block;
   border-radius: 5px; /* Optional: add border-radius to the label */
 }
 
-@media (max-width: 768px) {
-#homepage-table-price .info-row {
-	grid-template-columns: .7fr .1fr .5fr .4fr .7fr .3fr;
-    /* gap: 5px; */
-  }
-	
-  #homepage-table-price .date-tag,
-  #homepage-table-price .action-buttons {display: none}
-
-  #homepage-table-price .stock-title .title-sub,
-  #homepage-table-price .date-tag .tag {font-size: 0.7em}
-}
-
 
 #homepage-table-price .table-header {
 	display: grid;
-    grid-template-columns: .7fr .1fr .5fr .4fr .7fr .3fr;
 	direction: rtl;
 }
 
@@ -315,4 +278,10 @@ display: block;
 
 #homepage-table-price .home_price_table_rows.hidden {
 	display: none;
+}
+
+
+@media (max-width: 768px) {
+	#homepage-table-price .info-row, #homepage-table-price .table-header { grid-template-columns: .1fr .5fr .1fr .15fr .2fr .1fr }
+  #homepage-table-price .date-tag .tag {font-size: 0.7em}
 }

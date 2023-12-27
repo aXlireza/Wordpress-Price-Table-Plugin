@@ -13,6 +13,7 @@ function enqueue_custom_styles() {
   wp_enqueue_style('pricetable-chart-popup', plugin_dir_url(__FILE__) . 'assets/css/popup.css');
   wp_enqueue_style('pricetable-single-post', plugin_dir_url(__FILE__) . 'assets/css/single-post.css');
   wp_enqueue_style('pricetable-home-tablerow', plugin_dir_url(__FILE__) . 'assets/css/home-tablerow.css');
+  wp_enqueue_style('pricetable-accordion', plugin_dir_url(__FILE__) . 'assets/css/tablerow-accordion.css');
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_styles');
 

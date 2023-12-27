@@ -46,11 +46,13 @@ function display_lowest_price_posts() {
     echo '<div class="table-header">';
     // Add your table headers here
     echo '
-        <span>عنوان</span>
+        <span class="hideonmobile">عنوان</span>
         <span>سایز</span>
         <span style="text-align: center;">کارخانه</span>
-        <span style="text-align: center;">وزن</span>
-        <span>قیمت و نوسان</span>
+        <span style="text-align: center;">وزن <span class="hideondesktop">(KG)</span></span>
+        <span class="hideonmobile">قیمت و نوسان</span>
+        <span class="hideondesktop">قیمت <span class="hideondesktop">(تومان)</span></span>
+        <span class="hideondesktop">نوسان</span>
         <span style="text-align: center;">سایر</span>
     ';
     echo '</div>';
@@ -79,7 +81,7 @@ function display_lowest_price_posts() {
                 $post_id = get_the_ID();
                 $factory_name = wp_get_post_terms($post_id, 'price_table_factory') ? wp_get_post_terms($post_id, 'price_table_factory')[0]->name : '';
                 $factory_id = wp_get_post_terms($post_id, 'price_table_factory') ? wp_get_post_terms($post_id, 'price_table_factory')[0]->term_id : '';
-                $your_select_field_value_value = get_post_custom_values("_thickness", $post_id) ? get_post_custom_values("_thickness", $post_id)[0] : '';
+                $your_select_field_value_value = get_post_custom_values("_thickness", $post_id) ? get_post_custom_values("_thickness", $post_id)[0] : get_post_custom_values("_size", $post_id)[0];
                 $alloy = get_post_custom_values('_alloy', $post_id) ? get_post_custom_values('_alloy', $post_id)[0] : '';
                 $unit = get_post_custom_values('_unit', $post_id) ? get_post_custom_values('_unit', $post_id)[0] : '';
                 $weight = get_post_custom_values("_weight", $post_id) ? get_post_custom_values("_weight", $post_id)[0] : '0';
@@ -122,23 +124,47 @@ function display_lowest_price_posts() {
             
                 echo "<div class=\"info_row_container\">
                     <div id=\"$post_id\" class=\"info-row rtl\">
-                        <div class=\"stock-title\">
+                        <div class=\"hideonmobile stock-title\">
                             <a href=\"$link\" class=\"title-main farsi-numbers\">$title</a>
                         </div>
                         <div class=\"row-size farsi-numbers\">$your_select_field_value_value</div>
                         <div class=\"row-size\">$factory_name</div>
-                        <div class=\"row-size\">$weight کیلوگرم</div>
-                        <div class=\"price-information $change_sign_class_name\">
+                        <div class=\"row-size\">$weight <span class='hideonmobile'>کیلوگرم</span></div>
+
+                        
+                        <span class=\"hideondesktop farsi-numbers pricenumber\" original_price=\"$price\">$price</span>
+                        <div class='hideondesktop price-information $change_sign_class_name'>
+                            <div class=\"price\">
+                                <div class=\"status-box\">
+                                    <span class=\"arrow-icon fa-icon\"></span>
+                                    <span class=\"status-number farsi-numbers\">$changes</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=\"hideonmobile price-information $change_sign_class_name\">
                             <div class=\"price\">
                                 <span class=\"farsi-numbers pricenumber\" original_price=\"$price\">$price</span>
-                                <span class=\"currency\">تومان</span>
+                                <span class=\"currency hideonmobile\">تومان</span>
                             </div>
                             <div class=\"status-box\">
                                 <span class=\"arrow-icon fa-icon\"></span>
                                 <span class=\"status-number farsi-numbers\">$changes</span>
                             </div>
                         </div>
+
                         <a href=\"$link\" class=\"description-label\">توضیحات</a>
+                        
+                        <button class='moredetails accordion-button fa-icon'></button>
+                        <div class='moredetails accordion-content'>
+                            <div>
+                                <ul style='margin: 0;'>
+                                    <li>$factory_name</li>
+                                    <li>$title</li>
+                                </ul>
+                                <a href=\"$link\" class=\"description-label fa-info-circle fa-icon\">توضیحات بیشتر</a>
+                            </div>
+                        </div>
                     </div>
                 </div>";
             }
