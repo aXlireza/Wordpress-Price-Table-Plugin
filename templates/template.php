@@ -39,12 +39,12 @@ if (empty($your_select_field_value_fa)) {
 // if ($html_transient) {
 //     echo $html_transient;
 // } else {
-    // $transient_name = 'price_table'.$current_category->term_id.$current_category->taxonomy;
-    // $factory_posts_transient = get_transient($transient_name);
+    $transient_name = 'price_table'.$current_category->term_id.$current_category->taxonomy;
+    $factory_posts_transient = get_transient($transient_name);
 
-    // if ($factory_posts_transient) {
-    //     $factory_posts = $factory_posts_transient;
-    // } else {
+    if ($factory_posts_transient) {
+        $factory_posts = $factory_posts_transient;
+    } else {
         // Query posts from price_table post type sorted by price_table_factory taxonomy
         $args = array(
             'post_type' => 'price_table',
@@ -88,9 +88,9 @@ if (empty($your_select_field_value_fa)) {
                 }
             }
             wp_reset_postdata();
-            // set_transient($transient_name, $factory_posts, 60*60*24);
+            set_transient($transient_name, $factory_posts, 60*60*24);
         }
-    // }
+    }
 
     if (!empty($factory_posts)) {
         // Get all subcategories of the current category or its parent category
@@ -197,7 +197,7 @@ if (empty($your_select_field_value_fa)) {
 
 
         $content .= "</section>";
-        // set_transient($transient_name_html, $content, 60*60*24);
+        // set_transicent($transient_name_html, $content, 60*60*24);
         echo $content;
     } else {
         echo '<p>No posts found.</p>';
