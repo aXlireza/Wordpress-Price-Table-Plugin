@@ -1,23 +1,20 @@
 @font-face {
     font-family: 'FontAwesomeBrands';
-    src: url('fa-brands-400.woff2') format('woff2'),
-            url('fa-brands-400.woff') format('woff');
+    src: url('fa-brands-400.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'FontAwesomeRegular';
-    src: url('fa-regular-400.woff2') format('woff2'),
-            url('fa-regular-400.woff') format('woff');
+    src: url('fa-regular-400.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'FontAwesomeSolid';
-    src: url('fa-solid-900.woff2') format('woff2'),
-            url('fa-solid-900.woff') format('woff');
+    src: url('fa-solid-900.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }

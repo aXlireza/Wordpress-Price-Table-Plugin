@@ -1,0 +1,1153 @@
+#price_table_options_main .categoryitems {
+	display: flex;
+	justify-content: flex-start;
+	padding: 10px;
+	background: #fff;
+	overflow-x: scroll;
+	column-gap: 25px;
+}
+
+#price_table_options_main .categoryitems .icon-item {
+	text-align: center;
+	padding: 5px;
+	border-radius: 3px;
+	/* transition: background-color 0.3s ease; */
+	box-shadow: 0 0 10px 0 rgba(0,0,0,.15);
+	border: 1px solid transparent;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	column-gap: 5px;
+}
+
+#price_table_options_main .categoryitems .icon-item:hover {
+	background-color: #ebebeb; /* Light grey background on hover */
+	border: 1px solid #000;
+}
+
+#price_table_options_main .categoryitems .menu-icon {
+	width: 40px; /* Adjust size as needed */
+	height: auto;
+}
+
+#price_table_options_main .categoryitems .icon-item span {
+	display: block;
+	font-size: 14px; /* Adjust size as needed */
+	color: #333; /* Adjust text color as needed */
+	width: max-content;
+}
+
+#price_table_options_main .categoryitems .icon-item img {
+	width: 40px;
+}
+
+#price_table_options_main .categoryitems .info-box {
+	text-align: center;
+	padding: 10px;
+	margin-top: 10px; /* Adjust as needed */
+	background: #fff;
+	border: 1px solid #ccc;
+	transition: background-color 0.3s ease;
+}
+
+#price_table_options_main .categoryitems .info-box.active {
+	background-color: #ddd; /* Darker background when active */
+}
+#price_table_options_main .fa-icon {font-family: 'Font Awesome 5 Free'}
+#price_table_options_main .rtl {direction: rtl}
+
+#price_table_options_main .farsi-numbers {
+    font-family: 'IranYekanWebRegular', sans-serif; /* Use the font that supports Persian digits */
+    font-feature-settings: 'numr';
+}
+
+#price_table_options_main .hidden {
+    display: none;
+}
+
+#price_table_options_main {
+	display: flex;
+    flex-direction: row;
+	font-family: 'IranYekanWebRegular';
+    direction: rtl;
+}
+
+@media (max-width: 768px) {
+    #price_table_options_main {
+        flex-direction: column-reverse;
+    }
+    #price_table_options_main .factory_table { padding: 0 15px }
+}
+
+@media (max-width: 768px) {
+    .hideonmobile {display: none!important}
+}
+@media (min-width: 769px) {
+    .hideondesktop {display: none!important}
+}
+#homepage-table-price .allrows {
+	display: flex;
+	row-gap: 10px;
+	flex-direction: column;
+}
+#homepage-table-price .fa-icon {font-family: 'Font Awesome 5 Free'}
+
+#homepage-table-price .farsi-numbers {
+    font-family: 'IranYekanWebRegular', sans-serif; /* Use the font that supports Persian digits */
+    font-feature-settings: 'numr';
+}
+
+#homepage-table-price .info-container {margin: 10px}
+
+#homepage-table-price .info-row {
+  display: grid;
+  align-items: center;
+  /* gap: 10px; */
+  /* padding: 10px; */
+  border-radius: 5px;
+  background-color: #f9f9f9; /* Default background color */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 100%; /* Stretch to fit the container */
+  direction: rtl;
+}
+
+#homepage-table-price .info-row,
+	#homepage-table-price .table-header { grid-template-columns: .7fr .2fr .5fr .4fr .7fr .3fr }
+
+#homepage-table-price .row-size {
+  	text-align: center;
+  	font-size: 1em;
+}
+
+#homepage-table-price .stock-title .title-main {
+    display: block;
+    color: #000;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+#homepage-table-price .stock-title .title-sub {
+	display: flex;
+	color: #666;
+	font-size: 0.8em;
+	align-items: baseline;
+}
+
+#homepage-table-price .stock-title .title-sub .weight {
+	display: block;
+	color: #15a1ed;
+	font-size: 0.8em;
+	margin: 0 2px;
+}
+
+#homepage-table-price .stock-title .title-sub .unit {
+	display: block;
+	color: #15a1ed;
+	font-size: 0.4em;
+}
+
+#homepage-table-price .price-information {
+	display: flex;
+	align-items: center;
+}
+
+#homepage-table-price .price-information .price {
+	display: flex;
+	align-items: center;
+}
+
+#homepage-table-price .status-box {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 60px;
+	height: 30px;
+	border-radius: 20em;
+	padding: 2px 10px;
+	color: #fff;
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+/* Phone Condition */
+#homepage-table-price .phonecall {
+	width: fit-content;
+	text-decoration: none;
+}
+#homepage-table-price .phonecall .arrow-icon::before {
+	content: "\f095";
+	color: #000;
+	font-weight: bold;
+	border: 2px solid #000;
+	border-radius: 50%;
+	padding: 6px;
+}
+
+#homepage-table-price .phonecall .status-number {
+	color: #000;
+}
+
+/* when the change rate is positive */
+#homepage-table-price .price-information.up .status-box {background-color: #4CAF50}
+#homepage-table-price .price-information.up .phonecall {display: none!important}
+#homepage-table-price .price-information.up .status-box .arrow-icon::before {content: "\f35b"}
+
+/* when the change rate is negative */
+#homepage-table-price .price-information.down .status-box {background-color: #F44336}
+#homepage-table-price .price-information.down .phonecall {display: none!important}
+#homepage-table-price .price-information.down .status-box .arrow-icon::before {content: "\f358"}
+#homepage-table-price .price-information.down .status-box .status-number {direction: ltr}
+
+/* when it's on neutral */
+#homepage-table-price .price-information.neutral .status-box {background-color: #858585}
+#homepage-table-price .price-information.neutral .phonecall {display: none!important}
+#homepage-table-price .price-information.neutral .status-box .arrow-icon::before {content: "\f111"}
+
+@media (max-width: 768px) {
+	#homepage-table-price .price-information.neutral .status-box { color: #858585; background-color: unset!important }
+	#homepage-table-price .price-information.down .status-box { color: #F44336; background-color: unset!important }
+	#homepage-table-price .price-information.up .status-box { color: #4CAF50; background-color: unset!important }
+	#homepage-table-price .status-box {width: unset; height: unset; padding: unset;}
+}
+
+
+
+/* when the change rate is is to "call" mode */
+#homepage-table-price .price-information.phone .status-box, .price-information.phone .price {display: none!important}
+
+
+
+#homepage-table-price .arrow-icon::before {
+	content: "\f358";
+	font-weight: 400;
+}
+
+#homepage-table-price .status-number {
+	margin-right: 5px;
+}
+
+#homepage-table-price .price span.pricenumber {
+	font-size: 1em;
+	font-weight: 600;
+}
+
+#homepage-table-price .price span.currency {
+	font-size: 13px;
+	font-weight: 200;
+}
+
+#homepage-table-price .price.phonecall {
+	display: none;
+}
+
+#homepage-table-price .date-tag {
+	display: flex;
+	justify-content: center;
+}
+
+#homepage-table-price .date-tag > div {
+	width: fit-content;
+}
+
+#homepage-table-price .date-tag .date {
+display: block;
+        color: #15a1ed;
+/* Date styling */
+}
+
+#homepage-table-price .date-tag .tag {
+	display: block;
+	color: #fff;
+	background-color: #15a1ed;
+	font-size: 0.8em;
+	text-align: center;
+	border-radius: 2px;
+}
+
+#homepage-table-price .description-label {
+	/* writing-mode: vertical-lr;
+	transform: rotate(180deg); */
+	white-space: nowrap;
+	align-self: stretch; /* Stretch to fill the grid row height */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 5px; /* Add padding to the label */
+	border-radius: 5px; /* Optional: add border-radius to the label */
+	/* background-color: #E0E0E0; */
+	color: #33a5f0;
+	text-decoration: none;
+	margin-right: 5px;
+}
+
+/* Hover effects */
+#homepage-table-price .info-row:hover {
+  background-color: #f0f0f0; /* Light grey background */
+  transform: translateX(10px); /* Slight move to the right */
+}
+
+#homepage-table-price .info-row:hover .description-label {
+  background-color: #2196F3; /* Blue background for the last column */
+  color: #fff;
+  padding: 5px; /* Add padding to the label */
+  border-radius: 5px; /* Optional: add border-radius to the label */
+}
+
+
+#homepage-table-price .table-header {
+	display: grid;
+	direction: rtl;
+}
+
+
+
+
+
+
+#homepage-table-price .categoryitems {
+	direction: rtl;
+	display: flex;
+	justify-content: flex-start;
+	padding: 10px;
+	background: #fff;
+	overflow-x: scroll;
+	column-gap: 25px;
+}
+
+#homepage-table-price .categoryitems .icon-item {
+	text-align: center;
+	padding: 5px;
+	border-radius: 3px;
+	/* transition: background-color 0.3s ease; */
+	box-shadow: 0 0 10px 0 rgba(0,0,0,.15);
+	border: 1px solid transparent;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	column-gap: 5px;
+}
+
+#homepage-table-price .categoryitems .icon-item:hover {
+	background-color: #ebebeb; /* Light grey background on hover */
+	border: 1px solid #000;
+}
+
+#homepage-table-price .categoryitems .menu-icon {
+	width: 40px; /* Adjust size as needed */
+	height: auto;
+}
+
+#homepage-table-price .categoryitems .icon-item span {
+	display: block;
+	font-size: 14px; /* Adjust size as needed */
+	color: #333; /* Adjust text color as needed */
+	width: max-content;
+}
+
+#homepage-table-price .categoryitems .icon-item img {
+	width: 40px;
+}
+
+#homepage-table-price .categoryitems .info-box {
+	text-align: center;
+	padding: 10px;
+	margin-top: 10px; /* Adjust as needed */
+	background: #fff;
+	border: 1px solid #ccc;
+	transition: background-color 0.3s ease;
+}
+
+#homepage-table-price .categoryitems .info-box.active {
+	background-color: #ddd; /* Darker background when active */
+}
+
+
+#homepage-table-price .home_price_table_rows.hidden {
+	display: none;
+}
+
+
+@media (max-width: 768px) {
+	#homepage-table-price .info-row, #homepage-table-price .table-header { grid-template-columns: .1fr .5fr .1fr .15fr .2fr .1fr }
+  #homepage-table-price .date-tag .tag {font-size: 0.7em}
+}
+#price_table_options_main #pageheader {
+	display: flex;
+	flex-direction: row;
+	align-items: baseline;
+	padding: 20px;
+	background-color: #f8f8f8;
+	justify-content: space-between;
+}
+
+#price_table_options_main #pageheader .breadcrumb .breadcrumb-item.breadcrumb-item:nth-child(1)::before {
+	content: none;
+}
+#price_table_options_main #pageheader .breadcrumb .breadcrumb-item::before {
+		content: "\f053";
+	font-family: 'Font Awesome 5 Free';
+	color: #a0a0a0;
+	font-size: 10px;
+	margin-left: 15px;
+	font-weight: 900;
+}
+
+#price_table_options_main #pageheader .main-title {
+	font-size: 2em; /* Large font size for desktop */
+	margin: 0;
+}
+
+#price_table_options_main #pageheader .breadcrumb {
+	padding: 0;
+	list-style: none;
+	display: flex;
+	gap: 10px;
+	margin-bottom: 20px; /* Space between breadcrumb and content */
+}
+
+#price_table_options_main #pageheader .breadcrumb-item a {
+	color: #888;
+	text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+	#price_table_options_main #pageheader {
+		align-items: center;
+		text-align: center;
+	}
+
+	#price_table_options_main #pageheader .main-title {
+		font-size: 18px; /* Smaller font size for mobile */
+	}
+
+	#price_table_options_main #pageheader .breadcrumb {
+		width: 100%;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	#price_table_options_main #pageheader .breadcrumb-item,
+	#price_table_options_main #pageheader .breadcrumb-item a {
+		font-size: 12px; /* Smaller font size for mobile */
+	}
+
+	#price_table_options_main #pageheader .breadcrumb-item + #price_table_options_main #pageheader .breadcrumb-item::before {
+		/* Adjust the content if you want a different separator for mobile */
+	}
+}
+#price_table_options_main .popup-wrapper {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+	width: 50vw!important;
+	/* height: 40vh!important; */
+}
+
+#price_table_options_main .popup-wrapper.active {
+	display: block;
+	z-index: 999;
+}
+
+#price_table_options_main .popup-content {
+	text-align: center;
+}
+
+#price_table_options_main .exit-button {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	background: none;
+	border: none;
+	font-size: 20px;
+	cursor: pointer;
+}
+#price_table_options_main.single-page .custom-table {
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#price_table_options_main.single-page .table-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px; /* Adjust as needed */
+}
+
+#price_table_options_main.single-page .table-cell {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 2px solid #e2e2e2; /* Line under each box */
+    flex-basis: 48%; /* Adjust the width of each cell */
+}
+
+#price_table_options_main.single-page .cell-title {
+    margin-right: 8px; /* Adjust the space between title and value */
+    color: #737373;
+}
+
+#price_table_options_main.single-page a.cell-value {
+    color: #1d92d1;
+    text-decoration: none;
+}
+
+#price_table_options_main.single-page .cell-value {
+    flex-grow: 1;
+    text-align: left;
+}
+
+
+
+
+#price_table_options_main.single-page .card-container {
+    width: 40%;
+    margin: 0 auto;
+}
+
+#price_table_options_main.single-page .card {
+    background-color: #fff; /* Card background color */
+    border-radius: 8px; /* Rounded corners for card */
+    margin-bottom: 15px; /* Space between cards */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+#price_table_options_main.single-page .card-header, .card-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    align-items: center;
+}
+
+#price_table_options_main.single-page .card-header {
+    background-color: #007bff; /* Header background color */
+    color: #fff; /* Header text color */
+    border-top-left-radius: 8px; /* Rounded corners for header */
+    border-top-right-radius: 8px;
+}
+
+#price_table_options_main.single-page .card-content {
+    border-bottom: 1px solid #f0f0f0; /* Light line below each card content */
+}
+
+#price_table_options_main.single-page .date, .price, .amount {
+    flex-basis: 33%; /* Divide space evenly */
+    text-align: center;
+}
+
+/* Additional styling */
+#price_table_options_main.single-page .price {
+    color: #007bff; /* Highlight price color */
+}
+
+#price_table_options_main.single-page .amount.up {color: #28a745}
+#price_table_options_main.single-page .amount.down {color: #a72841}
+
+
+
+#price_table_options_main.single-page #first_row_singlepage {
+    width: 100%;
+    display: flex;
+}
+
+#price_table_options_main.single-page {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+    #price_table_options_main.single-page #first_row_singlepage {flex-direction: column}
+    #price_table_options_main.single-page .card-container {width: 90%}
+    #price_table_options_main.single-page .custom-table {width: 90%}
+}
+#price_table_options_main #tablefiltersidebar {
+	width: 250px; /* Adjust width as needed */
+	background: #fff;
+	padding: 20px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+	/* #price_table_options_main #tablefiltersidebar, #price_table_options_main .tag-input-container, #price_table_options_main .tag-input {width: 100%!important} */
+	#price_table_options_main #tablefiltersidebar, #price_table_options_main .tag-input-container {width: 100%!important}
+	#price_table_options_main #tablefiltersidebar {padding: 0!important;}
+	#price_table_options_main #tablefiltersidebar .button-group {
+    padding: 0 40px!important;
+	}
+	#price_table_options_main .tag-input {
+    width: 80%!important;
+	}
+	#price_table_options_main .tag-input-container {
+    justify-content: center;
+    margin: 10px 0;
+		align-items: center;
+	}
+}
+
+#price_table_options_main #tablefiltersidebar .sidebar-header h2 {
+	margin-bottom: 15px;
+	word-spacing: -3px;
+	font-size: 14px;
+	font-weight: 700;
+	text-align: center;
+	margin-top: 5px;
+	color: #15a1ed;
+}
+
+#price_table_options_main #tablefiltersidebar .button-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#price_table_options_main #tablefiltersidebar .button-group button {
+	width: 48%;
+	padding: 10px;
+	margin-bottom: 10px;
+	background: #007bff00;
+    border: 1px solid #007bff;
+	border-radius: 3px;
+	color: #000;
+	cursor: pointer;
+}
+
+#price_table_options_main #tablefiltersidebar .button-group button.active {
+    background: #007bff;
+}
+
+#price_table_options_main #tablefiltersidebar .button-group button:hover {
+	background: #0056b3;
+}
+
+#price_table_options_main #tablefiltersidebar .button-group button#btn-factories i::before {
+	content: "\f275";
+	font-weight: 900;
+    font-style: normal;
+}
+#price_table_options_main #tablefiltersidebar .button-group button#btn-sizes i::before {
+	content: "\f565";
+	font-weight: 900;
+    font-style: normal;
+}
+
+#price_table_options_main #tablefiltersidebar .tag-selector {
+	margin-bottom: 20px;
+}
+
+
+#price_table_options_main #tablefiltersidebar .hidden {
+	display: none;
+}
+
+#price_table_options_main .size_tags_hidden, #price_table_options_main .factory_tags_hidden {display: none}
+
+
+
+
+#price_table_options_main .tag-input {
+	width: max-content;
+	padding: 10px;
+	font-size: 16px;
+}
+
+#price_table_options_main .tag-list {
+	position: absolute;
+	width: 100%;
+	border: 1px solid #ccc;
+	background: #fff;
+	z-index: 1000;
+}
+
+#price_table_options_main .tag-list div {
+	padding: 10px;
+	cursor: pointer;
+}
+
+#price_table_options_main .tag-list div:hover {
+	background-color: #f0f0f0;
+}
+
+#price_table_options_main .selected-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+#price_table_options_main .selected-tag {
+  background: #007bff;
+  border-radius: 3px;
+  padding: 5px 10px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+#price_table_options_main .tag-input-container {
+  position: relative;
+  width: 300px;
+	display: flex;
+	flex-direction: column-reverse;
+	gap: 10px;
+}
+body #price_table_options_main {
+	font-family: 'IranYekanWebRegular', sans-serif; /* Replace with actual font-family */
+	margin: 0;
+	padding: 0;
+	background: #f7f7f7; /* Background color similar to the screenshot */
+}
+
+#price_table_options_main .navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+	background: #fff; /* Assuming a white navbar background */
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+#price_table_options_main .nav-menu {
+	display: grid;
+	grid-template-columns: .4fr 2fr 1fr 1fr auto;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+#price_table_options_main .nav-menu.mobile {display: none; grid-template-columns: .2fr .2fr .2fr .2fr .2fr .1fr ;}
+#price_table_options_main .nav-menu.mobile .nav-item {text-align: center; font-size: .8rem;}
+
+@media (max-width: 768px) {
+	#price_table_options_main .nav-menu.desktop {display: none;}
+	#price_table_options_main .nav-menu.mobile {display: grid;}
+}
+
+
+#price_table_options_main .nav-link {
+	text-decoration: none;
+	color: #333; /* Color for the links */
+	font-size: 1rem; /* Adjust size as needed */
+	padding: 5px 10px;
+}
+
+#price_table_options_main .nav-button {
+	padding: 5px 15px;
+	background-color: #0056b3; /* Button background color */
+	border: none;
+	border-radius: 4px;
+	color: #fff; /* Button text color */
+	cursor: pointer;
+}
+
+#price_table_options_main .nav-button:hover {
+	background-color: #003d82; /* Darker background on hover */
+}
+
+#price_table_options_main .table_info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #59595c;
+	padding: 1em;
+}
+
+#price_table_options_main .table_info > a {
+	font-size: 1.3em;
+	font-family: 'IranYekanWebRegular';
+	color: #fff;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+@media (max-width: 768px) {
+	#price_table_options_main .table_info > a {
+		font-size: 0.9rem;
+	}
+}
+
+#price_table_options_main .table_info .custom-select {
+	color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px; /* Adjust the font size as needed */
+  text-align: center;
+	background: #007bff; /* Sample button color based on the image */
+}
+
+#price_table_options_main .table_info .custom-select-wrapper {
+	background: #007bff; /* Sample button color based on the image */
+	padding: 10px; /* Adjust the padding as needed */
+	border-radius: 5em;
+}
+
+/* Optionally: add styles for when the select box is open */
+#price_table_options_main .table_info .custom-select:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 113, 255, 0.5);
+}
+
+/* Style for options */
+#price_table_options_main .table_info .custom-select option {
+  background: white;
+  color: #007bff;
+}
+
+#price_table_options_main .rate_checked_warning.hidden {
+	display: none;
+}
+
+#price_table_options_main .rate_checked_warning {
+	display: block;
+}
+#price_table_options_main .ratebox-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 20px;
+}
+
+#price_table_options_main .ratebox-container .checkbox-container {
+	display: flex;
+	align-items: center;
+	background-color: #fcf1f2;
+	/* border: 1px solid #ccc; */
+	padding: 10px;
+	border-radius: 5px;
+	color: #893b42;
+}
+
+#price_table_options_main .ratebox-container .text-container {
+	background-color: #e9f7fe;
+	padding: 10px;
+	border-radius: 5px;
+	transition: background-color 0.3s ease;
+	color: #3184ae;
+}
+
+#price_table_options_main .ratebox-container .text-container.active {
+	background-color: #b2ebf2;
+}
+
+@media (max-width: 768px) {
+	#price_table_options_main .ratebox-container {
+		flex-direction: column;
+		align-items: stretch;
+	}
+}
+#price_table_options_main .moredetails.accordion-button, #homepage-table-price .moredetails.accordion-button {
+	color: #444;
+	cursor: pointer;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 15px;
+	transition: 0.4s;
+	background-color: #f9f9f9;
+	width: fit-content;
+	margin: 0 auto;
+}
+
+#price_table_options_main .moredetails.accordion-button:after, #homepage-table-price .moredetails.accordion-button:after {
+	content: '\f358';
+	color: #fff;
+	border-radius: 100%;
+	background-color: rgb(0, 84, 194);
+}
+
+#price_table_options_main .moredetails.accordion-button.active:after, #homepage-table-price .moredetails.accordion-button.active:after {
+	background-color: gray;
+	color: rgb(0, 84, 194);
+	border-radius: 100%;
+}
+
+#price_table_options_main .moredetails.accordion-content > div, #homepage-table-price .moredetails.accordion-content > div {
+	padding: 18px;
+	display: flex;
+	justify-content: space-between;
+}
+
+#price_table_options_main .moredetails.accordion-content, #homepage-table-price .moredetails.accordion-content {
+	display: none;
+	overflow: hidden;
+	background-color: #f1f1f1;
+	grid-row: 2;
+	grid-column: 1/7;
+	width: 100%;
+}
+
+#price_table_options_main .allrows {
+	display: flex;
+	row-gap: 10px;
+	flex-direction: column;
+}
+
+#price_table_options_main .info-container {margin: 10px}
+
+#price_table_options_main .info-row {width: 100%}
+
+#price_table_options_main .info-row .subrow {
+	display: grid;
+	align-items: center;
+	border-radius: 5px;
+	background-color: #f9f9f9;
+	transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#price_table_options_main .info-row .info-row-desktop { grid-template-columns: .4fr 2fr 1fr 1fr auto min-content }
+
+/* mobile mode */
+#price_table_options_main .info-row .info-row-mobile { display: none; grid-template-columns: .2fr .2fr .2fr .2fr .2fr .1fr }
+#price_table_options_main .info-row .info-row-mobile .col { justify-content: center }
+#price_table_options_main .info-row .info-row-mobile .unit {display: none;}
+#price_table_options_main .info-row .info-row-mobile .text {font-size: 1rem;}
+
+/* Mobile Mode Activation */
+@media (max-width: 768px) {
+	#price_table_options_main .info-row .info-row-desktop {display: none!important;}
+	#price_table_options_main .info-row .info-row-mobile {display: grid!important;}
+	#price_table_options_main .info-row:hover {transform: none!important;}
+}
+
+#price_table_options_main .row-size {
+	font-weight: bold;
+  	text-align: center;
+  	font-size: 2em;
+}
+
+#price_table_options_main .stock-title .title-main {
+    display: block;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+    font-size: 1.3em;
+}
+
+#price_table_options_main .stock-title .title-sub {
+	display: flex;
+	color: #666;
+	font-size: 0.8em;
+	align-items: baseline;
+}
+
+#price_table_options_main .stock-title .title-sub .weight {
+	display: flex;
+	flex-flow: row;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	align-items: center;
+	color: #15a1ed;
+	font-size: 0.8em;
+	margin: 0 2px;
+}
+
+#price_table_options_main .info-row-mobile .weight {
+	display: flex;
+	justify-content: center;
+}
+
+#price_table_options_main .stock-title .title-sub .unit {
+	display: block;
+	color: #15a1ed;
+	font-size: 0.4em;
+}
+
+#price_table_options_main .price-information {
+	display: flex;
+	align-items: center;
+}
+
+#price_table_options_main .price-information .price {
+	display: flex;
+	align-items: center;
+}
+
+#price_table_options_main .status-box {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 60px;
+	height: 30px;
+	border-radius: 20em;
+	padding: 2px 7px;
+	color: #fff;
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+#price_table_options_main .info-row-mobile .status-box {margin-left: 0; padding: 0;}
+/* Phone Condition */
+#price_table_options_main .phonecall {
+	width: fit-content;
+	text-decoration: none;
+}
+#price_table_options_main .phonecall .arrow-icon::before {
+	content: "\f095";
+	color: #000;
+	font-weight: bold;
+	border: 2px solid #000;
+	border-radius: 50%;
+	padding: 6px;
+}
+
+#price_table_options_main .phonecall .status-number {
+	color: #000;
+}
+
+/* when the change rate is positive */
+#price_table_options_main .info-row .info-row-desktop .price-information .status-box.up {background-color: #4CAF50}
+#price_table_options_main .info-row .info-row-mobile .price-information .status-box.up {color: #4CAF50}
+#price_table_options_main .info-row .price-information .status-box.up .arrow-icon::before {content: "\f35b"}
+
+/* when the change rate is negative */
+#price_table_options_main .info-row .info-row-desktop .price-information .status-box.down {background-color: #F44336}
+#price_table_options_main .info-row .info-row-mobile .price-information .status-box.down {color: #F44336}
+#price_table_options_main .info-row .price-information .status-box.down .arrow-icon::before {content: "\f358"}
+#price_table_options_main .info-row .price-information .status-box.down .status-number {direction: ltr}
+
+/* when it's on neutral */
+#price_table_options_main .info-row .info-row-desktop .price-information .status-box.neutral {background-color: #858585}
+#price_table_options_main .info-row .info-row-mobile .price-information .status-box.neutral {color: #5e5e5e}
+#price_table_options_main .info-row .price-information .status-box.neutral .arrow-icon::before {content: "\f111"}
+
+
+#price_table_options_main .arrow-icon::before {
+	content: "\f358";
+	font-weight: 400;
+}
+
+#price_table_options_main .status-number {
+	margin-right: 5px;
+}
+
+#price_table_options_main .price span.pricenumber {
+	font-size: 2em;
+	font-weight: 600;
+}
+
+#price_table_options_main .price span.currency {
+	font-size: 13px;
+	font-weight: 200;
+}
+
+/* #price_table_options_main .price.phonecall {display: none} */
+
+#price_table_options_main .date-tag {
+	display: flex;
+	justify-content: center;
+}
+
+#price_table_options_main .date-tag > div {
+	width: fit-content;
+}
+
+#price_table_options_main .date-tag .date {
+display: block;
+        color: #15a1ed;
+/* Date styling */
+}
+
+#price_table_options_main .date-tag .tag {
+	display: block;
+	color: #fff;
+	background-color: #15a1ed;
+	font-size: 0.8em;
+	text-align: center;
+	border-radius: 2px;
+}
+
+#price_table_options_main .action-buttons .chart-btn,
+#price_table_options_main .action-buttons .like-btn {
+	background: none;
+	border: 1px solid #ddd;
+	border-radius: 50%;
+	padding: 5px 10px;
+	margin-right: 5px;
+	cursor: pointer;
+	aspect-ratio: 1 / 1;
+}
+
+#price_table_options_main .action-buttons .chart-btn::before {
+	content: "\f080";
+	color: red; /* Or your chosen heart color */
+}
+
+#price_table_options_main .action-buttons .like-btn::before {
+	content: "\f004";
+	color: red; /* Or your chosen heart color */
+}
+#price_table_options_main .action-buttons {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	align-content: center;
+	align-items: center;
+}
+#price_table_options_main .action-buttons .chart-btn pre {
+	margin: 0;
+	font-family: 'IranYekanWebRegular';
+	font-size: 10px;
+	color: #78909C;
+}
+
+#price_table_options_main .description-label {
+	writing-mode: vertical-lr;
+	transform: rotate(180deg);
+	white-space: nowrap;
+	align-self: stretch; /* Stretch to fill the grid row height */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 5px; /* Add padding to the label */
+	border-radius: 5px; /* Optional: add border-radius to the label */
+	background-color: #E0E0E0;
+	color: #000;
+	text-decoration: none;
+	margin-right: 5px;
+}
+
+#price_table_options_main .info-row-mobile .description-label {
+	font-weight: 600;
+	transform: rotate(0deg)!important;
+	writing-mode: horizontal-tb;
+	width: fit-content;
+	flex-direction: column;
+	height: fit-content;
+	background-color: #2196F3; /* Blue background for the last column */
+	color: #fff;
+}
+
+/* Hover effects */
+#price_table_options_main .info-row:hover {
+  background-color: #f0f0f0; /* Light grey background */
+  transform: translateX(10px); /* Slight move to the right */
+}
+@media (min-width: 769px) {
+	#price_table_options_main .info-row:hover .description-label {
+		background-color: #2196F3; /* Blue background for the last column */
+		color: #fff;
+		padding: 5px; /* Add padding to the label */
+		border-radius: 5px; /* Optional: add border-radius to the label */
+	}
+}
+
+@media (max-width: 768px) {
+#price_table_options_main .info-row .info-row-desktop {
+	grid-template-columns: auto auto auto min-content;
+    /* gap: 5px; */
+  }
+	
+  #price_table_options_main .date-tag {display: none}
+
+  #price_table_options_main .stock-title .title-sub,
+  #price_table_options_main .date-tag .tag {font-size: 0.7em}
+}
+
